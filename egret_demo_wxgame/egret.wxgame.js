@@ -2740,69 +2740,23 @@ if (window['HTMLVideoElement'] == undefined) {
 (function (egret) {
     var wxgame;
     (function (wxgame) {
+        var isShow = true;
         /**
          * @private
          */
         wxgame.WebLifeCycleHandler = function (context) {
-            var handleVisibilityChange = function () {
-                if (!document[hidden]) {
+            wx.onShow(function () {
+                if (!isShow) {
                     context.resume();
+                    isShow = true;
                 }
-                else {
+            });
+            wx.onHide(function () {
+                if (isShow) {
                     context.pause();
+                    isShow = false;
                 }
-            };
-            window.addEventListener("focus", context.resume, false);
-            window.addEventListener("blur", context.pause, false);
-            var hidden, visibilityChange;
-            if (typeof document.hidden !== "undefined") {
-                hidden = "hidden";
-                visibilityChange = "visibilitychange";
-            }
-            else if (typeof document["mozHidden"] !== "undefined") {
-                hidden = "mozHidden";
-                visibilityChange = "mozvisibilitychange";
-            }
-            else if (typeof document["msHidden"] !== "undefined") {
-                hidden = "msHidden";
-                visibilityChange = "msvisibilitychange";
-            }
-            else if (typeof document["webkitHidden"] !== "undefined") {
-                hidden = "webkitHidden";
-                visibilityChange = "webkitvisibilitychange";
-            }
-            else if (typeof document["oHidden"] !== "undefined") {
-                hidden = "oHidden";
-                visibilityChange = "ovisibilitychange";
-            }
-            if ("onpageshow" in window && "onpagehide" in window) {
-                window.addEventListener("pageshow", context.resume, false);
-                window.addEventListener("pagehide", context.pause, false);
-            }
-            if (hidden && visibilityChange) {
-                document.addEventListener(visibilityChange, handleVisibilityChange, false);
-            }
-            var ua = navigator.userAgent;
-            var isWX = /micromessenger/gi.test(ua);
-            var isQQBrowser = /mqq/ig.test(ua);
-            var isQQ = /mobile.*qq/gi.test(ua);
-            if (isQQ || isWX) {
-                isQQBrowser = false;
-            }
-            if (isQQBrowser) {
-                var browser = window["browser"] || {};
-                browser.execWebFn = browser.execWebFn || {};
-                browser.execWebFn.postX5GamePlayerMessage = function (event) {
-                    var eventType = event.type;
-                    if (eventType == "app_enter_background") {
-                        context.pause();
-                    }
-                    else if (eventType == "app_enter_foreground") {
-                        context.resume();
-                    }
-                };
-                window["browser"] = browser;
-            }
+            });
         };
     })(wxgame = egret.wxgame || (egret.wxgame = {}));
 })(egret || (egret = {}));
@@ -3031,7 +2985,7 @@ if (window['HTMLVideoElement'] == undefined) {
         /**
          * 微信小游戏支持库版本号
          */
-        wxgame.version = "1.1.2";
+        wxgame.version = "1.1.3";
         /**
          * 运行环境是否为子域
          */
@@ -3084,7 +3038,6 @@ if (window['HTMLVideoElement'] == undefined) {
                 wxgame.WebGLRenderContext.antialias = !!antialias;
                 // WebGLRenderContext.antialias = (typeof antialias == undefined) ? true : antialias;
             }
-            egret.Capabilities["runtimeType" + ""] = egret.RuntimeType.WXGAME;
             egret.sys.CanvasRenderBuffer = wxgame.CanvasRenderBuffer;
             setRenderMode(options.renderMode);
             var canvasScaleFactor;
@@ -3188,6 +3141,7 @@ if (true) {
     if (language in egret.$locale_strings)
         egret.$language = language;
 }
+egret.Capabilities["runtimeType" + ""] = egret.RuntimeType.WXGAME;
 //////////////////////////////////////////////////////////////////////////////////////
 //
 //  Copyright (c) 2014-present, Egret Technology.
@@ -5075,14 +5029,14 @@ egret.DeviceOrientation = egret.wxgame.WebDeviceOrientation;
             /**
              * 启用RenderBuffer
              */
-            WebGLRenderContext.prototype.activateBuffer = function (buffer) {
+            WebGLRenderContext.prototype.activateBuffer = function (buffer, width, height) {
                 buffer.rootRenderTarget.activate();
                 if (!this.bindIndices) {
                     this.uploadIndicesArray(this.vao.getIndices());
                 }
                 buffer.restoreStencil();
                 buffer.restoreScissor();
-                this.onResize(buffer.width, buffer.height);
+                this.onResize(width, height);
             };
             /**
              * 上传顶点数据
@@ -5244,7 +5198,7 @@ egret.DeviceOrientation = egret.wxgame.WebDeviceOrientation;
              */
             WebGLRenderContext.prototype.createTexture = function (bitmapData) {
                 var gl = this.context;
-                if (bitmapData == window["sharedCanvas"] && gl.wxBindCanvasTexture != null) {
+                if (bitmapData.isCanvas && gl.wxBindCanvasTexture != null) {
                     return bitmapData;
                 }
                 var texture = gl.createTexture();
@@ -5602,7 +5556,7 @@ egret.DeviceOrientation = egret.wxgame.WebDeviceOrientation;
                         }
                         break;
                     case 6 /* ACT_BUFFER */:
-                        this.activateBuffer(data.buffer);
+                        this.activateBuffer(data.buffer, data.width, data.height);
                         break;
                     case 7 /* ENABLE_SCISSOR */:
                         var buffer = this.activatedBuffer;
@@ -5685,8 +5639,8 @@ egret.DeviceOrientation = egret.wxgame.WebDeviceOrientation;
              **/
             WebGLRenderContext.prototype.drawTextureElements = function (data, offset) {
                 var gl = this.context;
-                if (data.texture == window["sharedCanvas"]) {
-                    gl.wxBindCanvasTexture(gl.TEXTURE_2D, window["sharedCanvas"]);
+                if (data.texture.isCanvas) {
+                    gl.wxBindCanvasTexture(gl.TEXTURE_2D, data.texture);
                 }
                 else {
                     gl.bindTexture(gl.TEXTURE_2D, data.texture);
@@ -5860,6 +5814,7 @@ egret.DeviceOrientation = egret.wxgame.WebDeviceOrientation;
         WebGLRenderContext.initBlendMode();
     })(wxgame = egret.wxgame || (egret.wxgame = {}));
 })(egret || (egret = {}));
+window["sharedCanvas"].isCanvas = true;
 //////////////////////////////////////////////////////////////////////////////////////
 //
 //  Copyright (c) 2014-present, Egret Technology.
@@ -7028,12 +6983,23 @@ egret.DeviceOrientation = egret.wxgame.WebDeviceOrientation;
                     node.$canvasScaleY = canvasScaleY;
                     node.dirtyRender = true;
                 }
-                if (!this.canvasRenderBuffer || !this.canvasRenderBuffer.context) {
-                    this.canvasRenderer = new egret.CanvasRenderer();
-                    this.canvasRenderBuffer = new wxgame.CanvasRenderBuffer(width, height);
+                var wxBindCanvasTexture = !!wxgame.WebGLRenderContext.getInstance(0, 0).context["wxBindCanvasTexture"];
+                if (wxBindCanvasTexture) {
+                    if (!this.canvasRenderer) {
+                        this.canvasRenderer = new egret.CanvasRenderer();
+                    }
+                    if (node.dirtyRender) {
+                        this.canvasRenderBuffer = new wxgame.CanvasRenderBuffer(width, height);
+                    }
                 }
-                else if (node.dirtyRender) {
-                    this.canvasRenderBuffer.resize(width, height);
+                else {
+                    if (!this.canvasRenderBuffer || !this.canvasRenderBuffer.context) {
+                        this.canvasRenderer = new egret.CanvasRenderer();
+                        this.canvasRenderBuffer = new wxgame.CanvasRenderBuffer(width, height);
+                    }
+                    else if (node.dirtyRender) {
+                        this.canvasRenderBuffer.resize(width, height);
+                    }
                 }
                 if (!this.canvasRenderBuffer.context) {
                     return;
@@ -7053,15 +7019,21 @@ egret.DeviceOrientation = egret.wxgame.WebDeviceOrientation;
                 if (node.dirtyRender) {
                     var surface = this.canvasRenderBuffer.surface;
                     this.canvasRenderer.renderText(node, this.canvasRenderBuffer.context);
-                    // 拷贝canvas到texture
-                    var texture = node.$texture;
-                    if (!texture) {
-                        texture = buffer.context.createTexture(surface);
-                        node.$texture = texture;
+                    if (wxBindCanvasTexture) {
+                        surface["isCanvas"] = true;
+                        node.$texture = surface;
                     }
                     else {
-                        // 重新拷贝新的图像
-                        buffer.context.updateTexture(texture, surface);
+                        // 拷贝canvas到texture
+                        var texture = node.$texture;
+                        if (!texture) {
+                            texture = buffer.context.createTexture(surface);
+                            node.$texture = texture;
+                        }
+                        else {
+                            // 重新拷贝新的图像
+                            buffer.context.updateTexture(texture, surface);
+                        }
                     }
                     // 保存材质尺寸
                     node.$textureWidth = surface.width;
@@ -7106,12 +7078,23 @@ egret.DeviceOrientation = egret.wxgame.WebDeviceOrientation;
                 canvasScaleY *= height2 / height;
                 width = width2;
                 height = height2;
-                if (!this.canvasRenderBuffer || !this.canvasRenderBuffer.context) {
-                    this.canvasRenderer = new egret.CanvasRenderer();
-                    this.canvasRenderBuffer = new wxgame.CanvasRenderBuffer(width, height);
+                var wxBindCanvasTexture = !!wxgame.WebGLRenderContext.getInstance(0, 0).context["wxBindCanvasTexture"];
+                if (wxBindCanvasTexture) {
+                    if (!this.canvasRenderer) {
+                        this.canvasRenderer = new egret.CanvasRenderer();
+                    }
+                    if (node.dirtyRender) {
+                        this.canvasRenderBuffer = new wxgame.CanvasRenderBuffer(width, height);
+                    }
                 }
-                else if (node.dirtyRender || forHitTest) {
-                    this.canvasRenderBuffer.resize(width, height);
+                else {
+                    if (!this.canvasRenderBuffer || !this.canvasRenderBuffer.context) {
+                        this.canvasRenderer = new egret.CanvasRenderer();
+                        this.canvasRenderBuffer = new wxgame.CanvasRenderBuffer(width, height);
+                    }
+                    else if (node.dirtyRender) {
+                        this.canvasRenderBuffer.resize(width, height);
+                    }
                 }
                 if (!this.canvasRenderBuffer.context) {
                     return;
@@ -7128,22 +7111,36 @@ egret.DeviceOrientation = egret.wxgame.WebDeviceOrientation;
                 var surface = this.canvasRenderBuffer.surface;
                 if (forHitTest) {
                     this.canvasRenderer.renderGraphics(node, this.canvasRenderBuffer.context, true);
-                    egret.WebGLUtils.deleteWebGLTexture(surface);
-                    var texture = buffer.context.getWebGLTexture(surface);
+                    var texture = void 0;
+                    if (wxBindCanvasTexture) {
+                        console.log("forHitTest");
+                        surface["isCanvas"] = true;
+                        texture = surface;
+                    }
+                    else {
+                        egret.WebGLUtils.deleteWebGLTexture(surface);
+                        texture = buffer.context.getWebGLTexture(surface);
+                    }
                     buffer.context.drawTexture(texture, 0, 0, width, height, 0, 0, width, height, surface.width, surface.height);
                 }
                 else {
                     if (node.dirtyRender) {
                         this.canvasRenderer.renderGraphics(node, this.canvasRenderBuffer.context);
-                        // 拷贝canvas到texture
-                        var texture = node.$texture;
-                        if (!texture) {
-                            texture = buffer.context.createTexture(surface);
-                            node.$texture = texture;
+                        if (wxBindCanvasTexture) {
+                            surface["isCanvas"] = true;
+                            node.$texture = surface;
                         }
                         else {
-                            // 重新拷贝新的图像
-                            buffer.context.updateTexture(texture, surface);
+                            // 拷贝canvas到texture
+                            var texture = node.$texture;
+                            if (!texture) {
+                                texture = buffer.context.createTexture(surface);
+                                node.$texture = texture;
+                            }
+                            else {
+                                // 重新拷贝新的图像
+                                buffer.context.updateTexture(texture, surface);
+                            }
                         }
                         // 保存材质尺寸
                         node.$textureWidth = surface.width;

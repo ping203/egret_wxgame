@@ -117,15 +117,16 @@ var Main = (function (_super) {
             });
         });
     };
+    /**
+     * 预加载资源
+     */
     Main.prototype.loadResource = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var loadingView, e_1;
+            var e_1;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 4, , 5]);
-                        loadingView = new LoadingUI();
-                        this.stage.addChild(loadingView);
                         return [4 /*yield*/, RES.loadConfig("resource/default.res.json", "resource/")];
                     case 1:
                         _a.sent();
@@ -135,11 +136,10 @@ var Main = (function (_super) {
                         //预加载主题
                         _a.sent();
                         //预加载资源
-                        return [4 /*yield*/, RES.loadGroup("preload", 0, loadingView)];
+                        return [4 /*yield*/, RES.loadGroup("preload", 0)];
                     case 3:
                         //预加载资源
                         _a.sent();
-                        this.stage.removeChild(loadingView);
                         return [3 /*break*/, 5];
                     case 4:
                         e_1 = _a.sent();
@@ -166,6 +166,19 @@ var Main = (function (_super) {
      * Create scene interface
      */
     Main.prototype.createGameScene = function () {
+        this.init();
+    };
+    Main.prototype.init = function () {
+        this.SW = this.stage.width;
+        this.SH = this.stage.height;
+        //利用白鹭预设的createBitmapByName创建一张图片
+        var bg = this.createBitmapByName("main_bg_png");
+        this.stage.addChild(bg);
+        //并添加到舞台底部
+        // const loadingView = new LoadingUI();
+        //将loading界面加入舞台
+        // this.stage.addChild(loadingView);
+        // this.stage.removeChild(loadingView);
     };
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。

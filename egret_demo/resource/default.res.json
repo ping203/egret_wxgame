@@ -1,8 +1,35 @@
 {
 	"groups": [
-		
+		{
+			"keys": "main_bg_png,main_top_score_png,main_top_bg_png,main_hp_icon_png,main_top_time_png",
+			"name": "preload"
+		}
 	],
 	"resources": [
-		
+		{
+			"url": "images/main_bg.png",
+			"type": "image",
+			"name": "main_bg_png"
+		},
+		{
+			"name": "main_top_score_png",
+			"type": "image",
+			"url": "images/main_top_score.png"
+		},
+		{
+			"name": "main_top_bg_png",
+			"type": "image",
+			"url": "images/main_top_bg.png"
+		},
+		{
+			"name": "main_hp_icon_png",
+			"type": "image",
+			"url": "images/main_hp_icon.png"
+		},
+		{
+			"name": "main_top_time_png",
+			"type": "image",
+			"url": "images/main_top_time.png"
+		}
 	]
 }
