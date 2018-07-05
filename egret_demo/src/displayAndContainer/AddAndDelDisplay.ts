@@ -14,6 +14,7 @@ class AddAndDelDisplay extends egret.DisplayObjectContainer{
      * 初始化
      */
     private init():void{
+        
 
     }
 }
