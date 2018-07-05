@@ -86,7 +86,7 @@ class ImpackCheck extends egret.DisplayObjectContainer{
         this.touchDot.graphics.beginFill(0x0094ff);
         this.touchDot.graphics.drawCircle(0,0,20);
         this.touchDot.graphics.endFill();
-        this.addChild(this.touchDot);
+        // this.addChild(this.touchDot);
 
         //提示信息
         this.showMsg=new egret.TextField();
@@ -114,7 +114,7 @@ class ImpackCheck extends egret.DisplayObjectContainer{
         //     this.touchDot.y=event.localY;
         // },this);
 
-        this.updateTxtInfo(this.touchStatus);
+        this.updateTxtInfo(TouchCollideStatus.NO_TOUCHED);
 
     }
 
@@ -130,25 +130,47 @@ class ImpackCheck extends egret.DisplayObjectContainer{
                     console.log('触摸到了文本区域')
                 }else{
                     console.log('没有触摸到了文本区域')
+                    this.stage.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.touchHandler,this);
+                    this.stage.once( egret.TouchEvent.TOUCH_END, this.touchHandler, this );
+                    this.addChild(this.touchDot);
+                    this.checkImpact(event.stageX,event.$stageY)   
                 }
+                this.updateTxtInfo(this.touchStatus);
                 break;
             //触摸移动过程
             case egret.TouchEvent.TOUCH_MOVE:
-
+                console.log('摸摸摸摸');
+                this.checkImpact(event.stageX,event.$stageY) 
+                
                 break;
             case egret.TouchEvent.TOUCH_END:
-
+                console.log('触摸结束')
+                 this.stage.removeEventListener( egret.TouchEvent.TOUCH_MOVE, this.touchHandler, this );
+                 if( this.touchDot.parent ){
+                    this.touchDot.parent.removeChild( this.touchDot );
+                }
+                this.updateTxtInfo(this.touchStatus);
                 break;
         }
 
     }
-        
+    
+    /**
+     * 检查是否碰撞
+     */
+    private checkImpact(x:number,y:number):void{
+        let isImpact=this.showBitmap.hitTestPoint(x,y,this.isCheckShape)
+        this.touchDot.x=x;
+        this.touchDot.y=y;
+
+        this.updateTxtInfo(isImpact?TouchCollideStatus.COLLIDED:TouchCollideStatus.TOUCHED_NO_COLLIDED);
+    }
     /**
      * 更新文本的信息
      */
-    private updateTxtInfo(isStatus:number):void{
+    private updateTxtInfo(isStatus:number):void{    
         this.showMsg.text="碰撞检测结果:"+(['放上手指','移动中','碰撞了'][isStatus])
-        +"\n碰撞检测模式:"+this.isCheckShape?"矩形包围盒":"像素检测";
+        +"\n碰撞检测模式:"+(this.isCheckShape?"矩形包围盒":"像素检测");
     }
 
 }

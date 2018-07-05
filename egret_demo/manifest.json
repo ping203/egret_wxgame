@@ -15,6 +15,7 @@
 		"bin-debug/ThemeAdapter.js",
 		"bin-debug/baseDisplay/AnchorAndRotate.js",
 		"bin-debug/baseDisplay/BaseDisplay.js",
-		"bin-debug/baseDisplay/ImpactCheck.js"
+		"bin-debug/baseDisplay/ImpactCheck.js",
+		"bin-debug/baseDisplay/Shader.js"
 	]
 }
