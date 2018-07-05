@@ -1,31 +1,3 @@
-//////////////////////////////////////////////////////////////////////////////////////
-//
-//  Copyright (c) 2014-present, Egret Technology.
-//  All rights reserved.
-//  Redistribution and use in source and binary forms, with or without
-//  modification, are permitted provided that the following conditions are met:
-//
-//     * Redistributions of source code must retain the above copyright
-//       notice, this list of conditions and the following disclaimer.
-//     * Redistributions in binary form must reproduce the above copyright
-//       notice, this list of conditions and the following disclaimer in the
-//       documentation and/or other materials provided with the distribution.
-//     * Neither the name of the Egret nor the
-//       names of its contributors may be used to endorse or promote products
-//       derived from this software without specific prior written permission.
-//
-//  THIS SOFTWARE IS PROVIDED BY EGRET AND CONTRIBUTORS "AS IS" AND ANY EXPRESS
-//  OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
-//  OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-//  IN NO EVENT SHALL EGRET AND CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-//  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-//  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;LOSS OF USE, DATA,
-//  OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
-//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-//  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
-//  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-//
-//////////////////////////////////////////////////////////////////////////////////////
 var __reflect = (this && this.__reflect) || function (p, c, t) {
     p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
 };
@@ -166,19 +138,44 @@ var Main = (function (_super) {
      * Create scene interface
      */
     Main.prototype.createGameScene = function () {
+        //初始化
         this.init();
+        // this.createTop();
     };
+    // private score:number;    //分数
     Main.prototype.init = function () {
         this.SW = this.stage.width;
         this.SH = this.stage.height;
-        //利用白鹭预设的createBitmapByName创建一张图片
-        var bg = this.createBitmapByName("main_bg_png");
-        this.stage.addChild(bg);
-        //并添加到舞台底部
-        // const loadingView = new LoadingUI();
-        //将loading界面加入舞台
-        // this.stage.addChild(loadingView);
-        // this.stage.removeChild(loadingView);
+        // //利用白鹭预设的createBitmapByName创建一张图片
+        // let bg=this.createBitmapByName("main_bg_png");
+        // //并添加到舞台底部
+        // this.stage.addChild(bg);
+        var impackCheck = new ImpackCheck();
+        this.stage.addChild(impackCheck);
+    };
+    Main.prototype.createTop = function () {
+        //为了方便管理与设置，将分数栏独立于一个容器内
+        var topContainer = new egret.DisplayObjectContainer();
+        var topBg = this.createBitmapByName("main_top_bg_png");
+        var scoreBg = this.createBitmapByName("main_top_score_png");
+        var timeBg = this.createBitmapByName("main_top_time_png");
+        var txt = new egret.TextField();
+        //添加的顺序影响层级
+        topContainer.addChild(topBg);
+        topContainer.addChild(scoreBg);
+        topContainer.addChild(timeBg);
+        topContainer.addChild(txt);
+        //整个分数容器在设计图中的位置
+        topContainer.x = 40;
+        topContainer.y = 22;
+        //标题和分数在分数栏内部的位置
+        scoreBg.x = 36;
+        scoreBg.y = 54;
+        txt.x = 100;
+        txt.y = 51;
+        //将分数TextField实例引用到Main类下的内部属性值，方便其他方法调用并修改分数值
+        this.TF_score = txt;
+        this.stage.addChild(topContainer);
     };
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。

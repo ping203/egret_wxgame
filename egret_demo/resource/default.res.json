@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "main_bg_png,main_top_score_png,main_top_bg_png,main_hp_icon_png,main_top_time_png",
+			"keys": "main_bg_png,main_top_score_png,main_top_bg_png,main_hp_icon_png,main_top_time_png,demo_pic_png",
 			"name": "preload"
 		}
 	],
@@ -30,6 +30,11 @@
 			"name": "main_top_time_png",
 			"type": "image",
 			"url": "images/main_top_time.png"
+		},
+		{
+			"name": "demo_pic_png",
+			"type": "image",
+			"url": "images/demo_pic.png"
 		}
 	]
 }
