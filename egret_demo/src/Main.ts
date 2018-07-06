@@ -103,8 +103,10 @@ class Main extends eui.UILayer {
         // let bg=this.createBitmapByName("main_bg_png");
         // //并添加到舞台底部
         // this.stage.addChild(bg);
-        let shader=new Shader();
-        this.stage.addChild(shader);
+
+        //各种demo的测试
+        let deepManager=new DeepManager();
+        this.stage.addChild(deepManager);
 
     }
 

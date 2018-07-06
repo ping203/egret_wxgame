@@ -150,8 +150,9 @@ var Main = (function (_super) {
         // let bg=this.createBitmapByName("main_bg_png");
         // //并添加到舞台底部
         // this.stage.addChild(bg);
-        var shader = new Shader();
-        this.stage.addChild(shader);
+        //各种demo的测试
+        var deepManager = new DeepManager();
+        this.stage.addChild(deepManager);
     };
     Main.prototype.createTop = function () {
         //为了方便管理与设置，将分数栏独立于一个容器内
