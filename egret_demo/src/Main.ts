@@ -105,8 +105,8 @@ class Main extends eui.UILayer {
         // this.stage.addChild(bg);
 
         //各种demo的测试
-        let deepManager=new DeepManager();
-        this.stage.addChild(deepManager);
+        let useContainer=new UseContainer();
+        this.stage.addChild(useContainer);
 
     }
 

@@ -151,8 +151,8 @@ var Main = (function (_super) {
         // //并添加到舞台底部
         // this.stage.addChild(bg);
         //各种demo的测试
-        var deepManager = new DeepManager();
-        this.stage.addChild(deepManager);
+        var useContainer = new UseContainer();
+        this.stage.addChild(useContainer);
     };
     Main.prototype.createTop = function () {
         //为了方便管理与设置，将分数栏独立于一个容器内
