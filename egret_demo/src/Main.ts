@@ -105,8 +105,8 @@ class Main extends eui.UILayer {
         // this.stage.addChild(bg);
 
         //各种demo的测试
-        let useContainer=new UseContainer();
-        this.stage.addChild(useContainer);
+        let bessel=new BesselCanvas();
+        this.stage.addChild(bessel);
 
     }
 
