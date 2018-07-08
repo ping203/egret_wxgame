@@ -17,6 +17,7 @@
 		"bin-debug/LoadingUI.js",
 		"bin-debug/baseDisplay/ImpactCheck.js",
 		"bin-debug/baseDisplay/Shader.js",
+		"bin-debug/canvas/BesselCanvas.js",
 		"bin-debug/displayAndContainer/AddAndDelDisplay.js",
 		"bin-debug/displayAndContainer/DeepManager.js",
 		"bin-debug/displayAndContainer/UsrContainer.js"
