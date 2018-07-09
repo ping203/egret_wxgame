@@ -8,18 +8,24 @@
 		"libs/modules/promise/promise.js"
 	],
 	"game": [
-		"bin-debug/baseDisplay/BaseDisplay.js",
-		"bin-debug/AssetAdapter.js",
+		"bin-debug/LoadingUI.js",
+		"bin-debug/baseDisplay/ImpactCheck.js",
 		"bin-debug/Main.js",
 		"bin-debug/Platform.js",
 		"bin-debug/ThemeAdapter.js",
+		"bin-debug/advanceBitmap/BitmapCache.js",
+		"bin-debug/advanceBitmap/DirtyRect.js",
 		"bin-debug/baseDisplay/AnchorAndRotate.js",
-		"bin-debug/LoadingUI.js",
-		"bin-debug/baseDisplay/ImpactCheck.js",
+		"bin-debug/baseDisplay/BaseDisplay.js",
+		"bin-debug/AssetAdapter.js",
 		"bin-debug/baseDisplay/Shader.js",
 		"bin-debug/canvas/BesselCanvas.js",
+		"bin-debug/canvas/DrawArc.js",
+		"bin-debug/canvas/DrawCircle.js",
 		"bin-debug/displayAndContainer/AddAndDelDisplay.js",
 		"bin-debug/displayAndContainer/DeepManager.js",
-		"bin-debug/displayAndContainer/UsrContainer.js"
+		"bin-debug/displayAndContainer/UsrContainer.js",
+		"bin-debug/displayerInteraction/Drag.js",
+		"bin-debug/displayerInteraction/MultiTouch.js"
 	]
 }

@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "main_bg_png,main_top_score_png,main_top_bg_png,main_hp_icon_png,main_top_time_png,demo_pic_png",
+			"keys": "main_bg_png,main_top_score_png,main_top_bg_png,main_hp_icon_png,main_top_time_png,demo_pic_png,small_bird_png",
 			"name": "preload"
 		}
 	],
@@ -35,6 +35,11 @@
 			"name": "demo_pic_png",
 			"type": "image",
 			"url": "images/demo_pic.png"
+		},
+		{
+			"name": "small_bird_png",
+			"type": "image",
+			"url": "images/small_bird.png"
 		}
 	]
 }
