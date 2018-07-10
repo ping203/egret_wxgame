@@ -52,3 +52,5 @@ declare module skins{
 }
 declare class Game2048Skin extends eui.Skin{
 }
+declare class GridItemSkin extends eui.Skin{
+}

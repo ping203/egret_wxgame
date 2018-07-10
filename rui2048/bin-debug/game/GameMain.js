@@ -19,6 +19,16 @@ var GameMain = (function (_super) {
      */
     function GameMain() {
         var _this = _super.call(this) || this;
+        //游戏方格的个数
+        _this.gridNum = 16;
+        //格子大小
+        _this.itemSize = 125;
+        //格子圆角
+        _this.itemRadius = 15;
+        //格子的间距
+        _this.itemSpace = 20;
+        //数据源
+        _this.gameData = [[], [], [], []];
         _this.skinName = 'Game2048Skin';
         GameMain.self = _this;
         //添加进舞台以及从舞台移除的各种监听
@@ -31,7 +41,44 @@ var GameMain = (function (_super) {
      */
     GameMain.prototype.addToStage = function () {
         console.log('添加进舞台');
+        //创建16个方格背景
+        for (var i = 0; i < this.gridNum; i++) {
+            var row = i % 4;
+            var col = Math.floor(i / 4);
+            var gridX = this.itemSpace + (this.itemSpace + this.itemSize) * row;
+            var gridY = this.itemSpace + (this.itemSpace + this.itemSize) * col;
+            console.log(gridX, gridY);
+            var gridRect = Utils.createRect(gridX, gridY, this.itemSize, this.itemSize, this.itemRadius, 0xcdc1b4, 1);
+            this.gameContent.addChild(gridRect);
+        }
         this.newGameBtn.addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.onClick, this);
+    };
+    /**
+     * 游戏初始化
+     */
+    GameMain.prototype.resetGame = function () {
+        /**清空 */
+        for (var i = 0; i < this.gameData.length; i++) {
+            for (var j = 0; j < this.gameData[i].length; j++) {
+                if (this.gameData[i][j].item) {
+                    this.gameData[i][j].item.setData(Utils.numStyle[0]);
+                    this.gameData[i][j].value = 0;
+                    this.removeFromParent(this.gameData[i][j].item);
+                }
+            }
+        }
+        /**新建 */
+        for (var i = 0; i < this.gameData.length; i++) {
+            for (var j = 0; j < 4; j++) {
+                if (!this.gameData[i])
+                    this.gameData[i] = [];
+                var data = new GridItemData();
+                data.value = 0;
+                data.i = 0;
+                data.j = 0;
+                this.gameData[i][j] = data;
+            }
+        }
     };
     /**
      * 各种点击事件
@@ -42,6 +89,12 @@ var GameMain = (function (_super) {
                 console.log('新游戏');
                 break;
         }
+    };
+    /**移除组件 */
+    GameMain.prototype.removeFromParent = function (child) {
+        if (!child || child.parent == null)
+            return;
+        child.parent.removeChild(child);
     };
     /**
      * 从舞台移除

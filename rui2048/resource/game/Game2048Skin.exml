@@ -32,8 +32,61 @@
         <!--游戏主窗口-->
         <e:Group id="gameContent"  width="600" height="600" y="230" horizontalCenter="0" touchChildren="false">
             <e:Rect width="600" height="600" fillColor="0xb8af9e" ellipseWidth="50" ellipseHeight="50" />
-            
+            <!--空数据集合-->
+            <e:List id='kongList' width="560" height="560" horizontalCenter="0" verticalCenter="0"
+                itemRendererSkinName="GridItemSkin"
+             visible="true">
+                <!--<e:ArrayCollection>
+					<e:Array>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+					</e:Array>
+				</e:ArrayCollection>
+				<e:layout>
+					<e:TileLayout horizontalGap="20" verticalGap="20" />
+				</e:layout>-->
+            </e:List>
 
+            <!--非空数据集合-->
+            <e:List id='gridList' width="560" height="560" horizontalCenter="0" verticalCenter="0" visible="false" itemRendererSkinName="GridItemSkin">
+             <e:ArrayCollection>
+					<e:Array>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+						<e:Object/>
+					</e:Array>
+				</e:ArrayCollection>
+				<e:layout>
+					<e:TileLayout horizontalGap="20" verticalGap="20" />
+				</e:layout>
+            </e:List>
         </e:Group>
 
         <e:Label width="100%" height="300" text="RUI" size="100" x="0" y="850" bold="true" textColor="0xb8af9e" textAlign="center" verticalAlign="middle"/>
