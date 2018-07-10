@@ -22,7 +22,7 @@ class MultiTouch extends egret.DisplayObjectContainer{
     private defAngle:number=0;
     
     private currentBirdRotation:number=0
-
+    
     public constructor(){
         super()
         this.once(egret.Event.ADDED_TO_STAGE,this.init,this);
@@ -47,7 +47,6 @@ class MultiTouch extends egret.DisplayObjectContainer{
         this.stage.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.touchDown,this)
         this.stage.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.touchMove,this)
         this.stage.addEventListener(egret.TouchEvent.TOUCH_END,this.touchUp,this)
-
 
     }
 
