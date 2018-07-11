@@ -17,6 +17,21 @@ class Utils{
         return rect;
     }
 
+    /**
+     * 创建一个label
+     */
+    public static createLabel(text: string, x: number, y: number, size: number, w: number, color: number, textAlign: string):eui.Label{
+        let label: eui.Label = new eui.Label();
+        label.text = `${text}`;
+        label.x = x;
+        label.y = y;
+        label.width = w;
+        label.bold = true;
+        label.size = size;
+        label.textColor = color;
+        label.textAlign = textAlign;
+        return label;
+    }
 
     /**颜色 */
     public static numStyle: any =

@@ -19,6 +19,21 @@ var Utils = (function () {
         rect.ellipseHeight = radius;
         return rect;
     };
+    /**
+     * 创建一个label
+     */
+    Utils.createLabel = function (text, x, y, size, w, color, textAlign) {
+        var label = new eui.Label();
+        label.text = "" + text;
+        label.x = x;
+        label.y = y;
+        label.width = w;
+        label.bold = true;
+        label.size = size;
+        label.textColor = color;
+        label.textAlign = textAlign;
+        return label;
+    };
     /**颜色 */
     Utils.numStyle = {
         "0": { "num": 0, "color": 0x7c736a, "bg": 0xcdc1b4, "size": 65 },

@@ -6,12 +6,8 @@
 	<e:Group width="640" height="1136" y="0" horizontalCenter="0">
 		<e:Label text="2048" textColor="0x7c736a" textAlign="center" verticalAlign="middle" size="100" bold="true" x="20"
 		         y="30" scaleX="1" scaleY="1" />
-		<e:Label text="Play 2048 Game Online" textColor="0x776e65" textAlign="center" verticalAlign="middle" size="22"
-		         bold="true" x="25" y="140" />
-		<e:Label text="Hjx" textColor="0xf2b179" textAlign="center" verticalAlign="middle" size="100" bold="true"
+		<e:Label text="RUI" textColor="0xf2b179" textAlign="center" verticalAlign="middle" size="100" bold="true"
 		         italic="true" horizontalCenter="0" bottom="100" />
-		<e:Label text="Join the numbers and get to the 2048 tile!" textColor="0x776e65" textAlign="center"
-		         verticalAlign="middle" size="22" x="25" y="170" bold="true" />
 		<e:Button id="newBtn" label="新游戏" y="140" skinName="GameBtnSkin" width="140" height="60" right="30" />
 		
 		<e:Group y="35" right="30">

@@ -1,0 +1,25 @@
+{
+	"groups": [
+		{
+			"keys": "description_json,gameEui_json,small_bird_png",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"name": "description_json",
+			"type": "json",
+			"url": "config/description.json"
+		},
+		{
+			"name": "gameEui_json",
+			"type": "json",
+			"url": "gameEui.json"
+		},
+		{
+			"name": "small_bird_png",
+			"type": "image",
+			"url": "images/small_bird.png"
+		}
+	]
+}

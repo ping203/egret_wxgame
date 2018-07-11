@@ -1,3 +1,7 @@
+declare class Game2048Skin extends eui.Skin{
+}
+declare class GridItemSkin extends eui.Skin{
+}
 declare module skins{
 	class ButtonSkin extends eui.Skin{
 	}
@@ -49,8 +53,4 @@ declare module skins{
 declare module skins{
 	class VSliderSkin extends eui.Skin{
 	}
-}
-declare class Game2048Skin extends eui.Skin{
-}
-declare class GridItemSkin extends eui.Skin{
 }

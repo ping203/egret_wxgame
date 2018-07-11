@@ -12,6 +12,28 @@ var GridItemData = (function () {
     function GridItemData() {
         this.value = 0; //值    
     }
+    Object.defineProperty(GridItemData.prototype, "disX", {
+        /**x的位置 */
+        get: function () {
+            /**修改锚点为中心点用来动画处理 */
+            var _half = 125 >> 1;
+            var disX = 20 + (20 + 125) * this.j;
+            return disX;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(GridItemData.prototype, "disY", {
+        /**y的位置 */
+        get: function () {
+            /**修改锚点为中心点用来动画处理 */
+            var _half = 125 >> 1;
+            var disY = 20 + (20 + 125) * this.i;
+            return disY;
+        },
+        enumerable: true,
+        configurable: true
+    });
     return GridItemData;
 }());
 __reflect(GridItemData.prototype, "GridItemData");
@@ -21,21 +43,21 @@ var ItemData = (function (_super) {
         var _this = _super.call(this) || this;
         _this.skinName = "GridItemSkin";
         _this.touchEnabled = false; //不能点击
-        _this.anchorOffsetX = _this.width >> 1;
-        _this.anchorOffsetY = _this.height >> 1;
         return _this;
+        // this.anchorOffsetX = this.width >> 1;
+        // this.anchorOffsetY = this.height >> 1;
     }
     ItemData.prototype.setData = function (data) {
         this.data = data;
-        this.grid.fillColor = data.bg;
+        this.gridItemBg.fillColor = data.bg;
         if (data.num > 0) {
-            this.numTxt.visible = true;
-            this.numTxt.text = data.num + "";
-            this.numTxt.size = data.size;
-            this.numTxt.textColor = data.color;
+            this.gridItemTxt.visible = true;
+            this.gridItemTxt.text = data.num + "";
+            this.gridItemTxt.size = data.size;
+            this.gridItemTxt.textColor = data.color;
         }
         else {
-            this.numTxt.visible = false;
+            this.gridItemTxt.visible = false;
         }
     };
     Object.defineProperty(ItemData.prototype, "num", {
