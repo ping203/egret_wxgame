@@ -1,0 +1,538 @@
+{
+	"groups": [
+		{
+			"keys": "description_json,gameEui_json,logo_png,startGameBtn_png,loadBg_jpg,winimg_png,story1bg_jpg,story2bg_jpg,story3bg_jpg,shop_btn_png,btnbg_png,caidan_png,goback_btn_png,story_4_jpg,wallbv_png,reglogbg_png,munebg_png,npcimg_png,bbg_png,bdbtn_png,buybtn_png,cancel_btn_png,combo_png,defblood_png,defbloodbg_png,di_png,djinfobg_png,djtit_png,exp_png,expbar_png,expbg_png,fanhui_png,fightbg0_jpg,fightbg1_jpg,fightbg2_jpg,fightbgb_jpg,fing_Arrow_png,finger_png,forgetpsd_png,getbtn_png,getsuc_png,giveupbtn_png,goback_png,goback_arrow_png,gobackbtn_png,gold_png,goout_png,guan_png,infobg_png,inputbg_png,jbbg_png,jyjlbg_png,lb_bg_png,lb_tit_png,lb_txt_png,loadbg_jpg,loading_png,logbtn_png,logtit_png,losimg_png,lostit_png,menubtn_png,menubtnbg_png,munebg2_png,npcimg2_png,offlogbtn_png,ok_btn_png,other_jpg,pause_png,paustit_png,paywanba_png,playinfobg_png,playlv_png,propts_png,qued_btn_png,quicklog_png,regbtn_png,regbtn~1_png,reglogbg2_png,regtit_png,reward_png,rush_btn_png,setbg_png,share_png,shop_btn2_png,star_a_png,star_b_png,start_btn_png,startgame_png,startnew_png,sucbg_png,tab_dazhe_png,updatebtn_png,wallbv2_png,wallbvbg_png,walltit_png,wallts_png,wintit_png,xzts_jpg,ydbox_png",
+			"name": "preload"
+		},
+		{
+			"keys": "loading_cover_png,loading_progress_png,loading_progressBg_png,loading_word_png",
+			"name": "loading"
+		},
+		{
+			"keys": "loadBg_jpg,startGameBtn_png,story1bg_jpg,story2bg_jpg,story3bg_jpg,winimg_png,munebg_png,npcimg_png,reglogbg_png,shop_btn_png,wallbv_png,bbg_png,bdbtn_png,buybtn_png,cancel_btn_png,combo_png,defblood_png,defbloodbg_png,di_png,djinfobg_png,djtit_png,exp_png,expbar_png,expbg_png,fanhui_png,fightbg0_jpg,fightbg1_jpg,fightbg2_jpg,fightbgb_jpg,fing_Arrow_png,finger_png,forgetpsd_png,getbtn_png,getsuc_png,giveupbtn_png,goback_arrow_png,goback_png,gobackbtn_png,gold_png,goout_png,guan_png,infobg_png,inputbg_png,jbbg_png,jyjlbg_png,lb_bg_png,lb_tit_png,lb_txt_png,loadbg_jpg,loading_png,logbtn_png,logtit_png,losimg_png,lostit_png,menubtn_png,menubtnbg_png,munebg2_png,npcimg2_png,offlogbtn_png,ok_btn_png,other_jpg,pause_png,paustit_png,paywanba_png,playinfobg_png,playlv_png,propts_png,qued_btn_png,quicklog_png,regbtn_png,regbtn~1_png,reglogbg2_png,regtit_png,reward_png,rush_btn_png,setbg_png,share_png,shop_btn2_png,star_a_png,star_b_png,start_btn_png,startgame_png,startnew_png,sucbg_png,tab_dazhe_png,updatebtn_png,wallbv2_png,wallbvbg_png,walltit_png,wallts_png,wintit_png,xzts_jpg,ydbox_png",
+			"name": "game"
+		}
+	],
+	"resources": [
+		{
+			"url": "config/description.json",
+			"type": "json",
+			"name": "description_json"
+		},
+		{
+			"url": "gameEui.json",
+			"type": "json",
+			"name": "gameEui_json"
+		},
+		{
+			"url": "assets/preload/logo.png",
+			"type": "image",
+			"name": "logo_png"
+		},
+		{
+			"url": "assets/loading/loading_cover.png",
+			"type": "image",
+			"name": "loading_cover_png"
+		},
+		{
+			"url": "assets/loading/loading_progress.png",
+			"type": "image",
+			"name": "loading_progress_png"
+		},
+		{
+			"url": "assets/loading/loading_progressBg.png",
+			"type": "image",
+			"name": "loading_progressBg_png"
+		},
+		{
+			"url": "assets/loading/loading_word.png",
+			"type": "image",
+			"name": "loading_word_png"
+		},
+		{
+			"url": "assets/game/start/startGameBtn.png",
+			"type": "image",
+			"name": "startGameBtn_png"
+		},
+		{
+			"url": "assets/game/start/loadBg.jpg",
+			"type": "image",
+			"name": "loadBg_jpg"
+		},
+		{
+			"url": "assets/game/main/winimg.png",
+			"type": "image",
+			"name": "winimg_png"
+		},
+		{
+			"url": "assets/game/main/story1bg.jpg",
+			"type": "image",
+			"name": "story1bg_jpg"
+		},
+		{
+			"url": "assets/game/main/story2bg.jpg",
+			"type": "image",
+			"name": "story2bg_jpg"
+		},
+		{
+			"url": "assets/game/main/story3bg.jpg",
+			"type": "image",
+			"name": "story3bg_jpg"
+		},
+		{
+			"url": "assets/game/menu/shop_btn.png",
+			"type": "image",
+			"name": "shop_btn_png"
+		},
+		{
+			"url": "assets/game/main/btnbg.png",
+			"type": "image",
+			"name": "btnbg_png"
+		},
+		{
+			"url": "assets/game/main/caidan.png",
+			"type": "image",
+			"name": "caidan_png"
+		},
+		{
+			"url": "assets/game/main/goback_btn.png",
+			"type": "image",
+			"name": "goback_btn_png"
+		},
+		{
+			"url": "assets/game/main/story_4.jpg",
+			"type": "image",
+			"name": "story_4_jpg"
+		},
+		{
+			"url": "assets/game/menu/wallbv.png",
+			"type": "image",
+			"name": "wallbv_png"
+		},
+		{
+			"url": "assets/game/menu/reglogbg.png",
+			"type": "image",
+			"name": "reglogbg_png"
+		},
+		{
+			"url": "assets/game/menu/munebg.png",
+			"type": "image",
+			"name": "munebg_png"
+		},
+		{
+			"url": "assets/game/menu/npcimg.png",
+			"type": "image",
+			"name": "npcimg_png"
+		},
+		{
+			"url": "assets/game/other/bbg.png",
+			"type": "image",
+			"name": "bbg_png"
+		},
+		{
+			"url": "assets/game/other/bdbtn.png",
+			"type": "image",
+			"name": "bdbtn_png"
+		},
+		{
+			"url": "assets/game/other/buybtn.png",
+			"type": "image",
+			"name": "buybtn_png"
+		},
+		{
+			"url": "assets/game/other/cancel_btn.png",
+			"type": "image",
+			"name": "cancel_btn_png"
+		},
+		{
+			"url": "assets/game/other/combo.png",
+			"type": "image",
+			"name": "combo_png"
+		},
+		{
+			"url": "assets/game/other/defblood.png",
+			"type": "image",
+			"name": "defblood_png"
+		},
+		{
+			"url": "assets/game/other/defbloodbg.png",
+			"type": "image",
+			"name": "defbloodbg_png"
+		},
+		{
+			"url": "assets/game/other/di.png",
+			"type": "image",
+			"name": "di_png"
+		},
+		{
+			"url": "assets/game/other/djinfobg.png",
+			"type": "image",
+			"name": "djinfobg_png"
+		},
+		{
+			"url": "assets/game/other/djtit.png",
+			"type": "image",
+			"name": "djtit_png"
+		},
+		{
+			"url": "assets/game/other/exp.png",
+			"type": "image",
+			"name": "exp_png"
+		},
+		{
+			"url": "assets/game/other/expbar.png",
+			"type": "image",
+			"name": "expbar_png"
+		},
+		{
+			"url": "assets/game/other/expbg.png",
+			"type": "image",
+			"name": "expbg_png"
+		},
+		{
+			"url": "assets/game/other/fanhui.png",
+			"type": "image",
+			"name": "fanhui_png"
+		},
+		{
+			"url": "assets/game/other/fightbg0.jpg",
+			"type": "image",
+			"name": "fightbg0_jpg"
+		},
+		{
+			"url": "assets/game/other/fightbg1.jpg",
+			"type": "image",
+			"name": "fightbg1_jpg"
+		},
+		{
+			"url": "assets/game/other/fightbg2.jpg",
+			"type": "image",
+			"name": "fightbg2_jpg"
+		},
+		{
+			"url": "assets/game/other/fightbgb.jpg",
+			"type": "image",
+			"name": "fightbgb_jpg"
+		},
+		{
+			"url": "assets/game/other/fing_Arrow.png",
+			"type": "image",
+			"name": "fing_Arrow_png"
+		},
+		{
+			"url": "assets/game/other/finger.png",
+			"type": "image",
+			"name": "finger_png"
+		},
+		{
+			"url": "assets/game/other/forgetpsd.png",
+			"type": "image",
+			"name": "forgetpsd_png"
+		},
+		{
+			"url": "assets/game/other/getbtn.png",
+			"type": "image",
+			"name": "getbtn_png"
+		},
+		{
+			"url": "assets/game/other/getsuc.png",
+			"type": "image",
+			"name": "getsuc_png"
+		},
+		{
+			"url": "assets/game/other/giveupbtn.png",
+			"type": "image",
+			"name": "giveupbtn_png"
+		},
+		{
+			"url": "assets/game/other/goback.png",
+			"type": "image",
+			"name": "goback_png"
+		},
+		{
+			"url": "assets/game/other/goback_arrow.png",
+			"type": "image",
+			"name": "goback_arrow_png"
+		},
+		{
+			"url": "assets/game/other/gobackbtn.png",
+			"type": "image",
+			"name": "gobackbtn_png"
+		},
+		{
+			"url": "assets/game/other/gold.png",
+			"type": "image",
+			"name": "gold_png"
+		},
+		{
+			"url": "assets/game/other/goout.png",
+			"type": "image",
+			"name": "goout_png"
+		},
+		{
+			"url": "assets/game/other/guan.png",
+			"type": "image",
+			"name": "guan_png"
+		},
+		{
+			"url": "assets/game/other/infobg.png",
+			"type": "image",
+			"name": "infobg_png"
+		},
+		{
+			"url": "assets/game/other/inputbg.png",
+			"type": "image",
+			"name": "inputbg_png"
+		},
+		{
+			"url": "assets/game/other/jbbg.png",
+			"type": "image",
+			"name": "jbbg_png"
+		},
+		{
+			"url": "assets/game/other/jyjlbg.png",
+			"type": "image",
+			"name": "jyjlbg_png"
+		},
+		{
+			"url": "assets/game/other/lb_bg.png",
+			"type": "image",
+			"name": "lb_bg_png"
+		},
+		{
+			"url": "assets/game/other/lb_tit.png",
+			"type": "image",
+			"name": "lb_tit_png"
+		},
+		{
+			"url": "assets/game/other/lb_txt.png",
+			"type": "image",
+			"name": "lb_txt_png"
+		},
+		{
+			"url": "assets/game/other/loadbg.jpg",
+			"type": "image",
+			"name": "loadbg_jpg"
+		},
+		{
+			"url": "assets/game/other/loading.png",
+			"type": "image",
+			"name": "loading_png"
+		},
+		{
+			"url": "assets/game/other/logbtn.png",
+			"type": "image",
+			"name": "logbtn_png"
+		},
+		{
+			"url": "assets/game/other/logtit.png",
+			"type": "image",
+			"name": "logtit_png"
+		},
+		{
+			"url": "assets/game/other/losimg.png",
+			"type": "image",
+			"name": "losimg_png"
+		},
+		{
+			"url": "assets/game/other/lostit.png",
+			"type": "image",
+			"name": "lostit_png"
+		},
+		{
+			"url": "assets/game/other/menubtn.png",
+			"type": "image",
+			"name": "menubtn_png"
+		},
+		{
+			"url": "assets/game/other/menubtnbg.png",
+			"type": "image",
+			"name": "menubtnbg_png"
+		},
+		{
+			"url": "assets/game/other/munebg.png",
+			"type": "image",
+			"name": "munebg2_png"
+		},
+		{
+			"url": "assets/game/other/npcimg.png",
+			"type": "image",
+			"name": "npcimg2_png"
+		},
+		{
+			"url": "assets/game/other/offlogbtn.png",
+			"type": "image",
+			"name": "offlogbtn_png"
+		},
+		{
+			"url": "assets/game/other/ok_btn.png",
+			"type": "image",
+			"name": "ok_btn_png"
+		},
+		{
+			"url": "assets/game/other/other.jpg",
+			"type": "image",
+			"name": "other_jpg"
+		},
+		{
+			"url": "assets/game/other/pause.png",
+			"type": "image",
+			"name": "pause_png"
+		},
+		{
+			"url": "assets/game/other/paustit.png",
+			"type": "image",
+			"name": "paustit_png"
+		},
+		{
+			"url": "assets/game/other/paywanba.png",
+			"type": "image",
+			"name": "paywanba_png"
+		},
+		{
+			"url": "assets/game/other/playinfobg.png",
+			"type": "image",
+			"name": "playinfobg_png"
+		},
+		{
+			"url": "assets/game/other/playlv.png",
+			"type": "image",
+			"name": "playlv_png"
+		},
+		{
+			"url": "assets/game/other/propts.png",
+			"type": "image",
+			"name": "propts_png"
+		},
+		{
+			"url": "assets/game/other/qued_btn.png",
+			"type": "image",
+			"name": "qued_btn_png"
+		},
+		{
+			"url": "assets/game/other/quicklog.png",
+			"type": "image",
+			"name": "quicklog_png"
+		},
+		{
+			"url": "assets/game/other/regbtn.png",
+			"type": "image",
+			"name": "regbtn_png"
+		},
+		{
+			"url": "assets/game/other/regbtn~1.png",
+			"type": "image",
+			"name": "regbtn~1_png"
+		},
+		{
+			"url": "assets/game/other/reglogbg.png",
+			"type": "image",
+			"name": "reglogbg2_png"
+		},
+		{
+			"url": "assets/game/other/regtit.png",
+			"type": "image",
+			"name": "regtit_png"
+		},
+		{
+			"url": "assets/game/other/reward.png",
+			"type": "image",
+			"name": "reward_png"
+		},
+		{
+			"url": "assets/game/other/rush_btn.png",
+			"type": "image",
+			"name": "rush_btn_png"
+		},
+		{
+			"url": "assets/game/other/setbg.png",
+			"type": "image",
+			"name": "setbg_png"
+		},
+		{
+			"url": "assets/game/other/share.png",
+			"type": "image",
+			"name": "share_png"
+		},
+		{
+			"url": "assets/game/other/shop_btn.png",
+			"type": "image",
+			"name": "shop_btn2_png"
+		},
+		{
+			"url": "assets/game/other/star_a.png",
+			"type": "image",
+			"name": "star_a_png"
+		},
+		{
+			"url": "assets/game/other/star_b.png",
+			"type": "image",
+			"name": "star_b_png"
+		},
+		{
+			"url": "assets/game/other/start_btn.png",
+			"type": "image",
+			"name": "start_btn_png"
+		},
+		{
+			"url": "assets/game/other/startgame.png",
+			"type": "image",
+			"name": "startgame_png"
+		},
+		{
+			"url": "assets/game/other/startnew.png",
+			"type": "image",
+			"name": "startnew_png"
+		},
+		{
+			"url": "assets/game/other/sucbg.png",
+			"type": "image",
+			"name": "sucbg_png"
+		},
+		{
+			"url": "assets/game/other/tab_dazhe.png",
+			"type": "image",
+			"name": "tab_dazhe_png"
+		},
+		{
+			"url": "assets/game/other/updatebtn.png",
+			"type": "image",
+			"name": "updatebtn_png"
+		},
+		{
+			"url": "assets/game/other/wallbv.png",
+			"type": "image",
+			"name": "wallbv2_png"
+		},
+		{
+			"url": "assets/game/other/wallbvbg.png",
+			"type": "image",
+			"name": "wallbvbg_png"
+		},
+		{
+			"url": "assets/game/other/walltit.png",
+			"type": "image",
+			"name": "walltit_png"
+		},
+		{
+			"url": "assets/game/other/wallts.png",
+			"type": "image",
+			"name": "wallts_png"
+		},
+		{
+			"url": "assets/game/other/wintit.png",
+			"type": "image",
+			"name": "wintit_png"
+		},
+		{
+			"url": "assets/game/other/xzts.jpg",
+			"type": "image",
+			"name": "xzts_jpg"
+		},
+		{
+			"url": "assets/game/other/ydbox.png",
+			"type": "image",
+			"name": "ydbox_png"
+		}
+	]
+}
