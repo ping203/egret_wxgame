@@ -47,4 +47,9 @@ class EnemyVO {
 	public is_dead:boolean;
 	/**额外数据 当冰封时为冰封剩余回合数 中毒是为剩余中毒回合数数 */
 	public extra_value:number = 0;
+<<<<<<< HEAD
+=======
+
+	
+>>>>>>> 472310ebceef6f37482b86bc1e079e1ec46c4c07
 }

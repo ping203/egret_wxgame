@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="loadingUISkin" width="650" height="1136" xmlns:e="http://ns.egret.com/eui">
+    <e:Group width="100%" height="100%">
+
+        <!--loading 界面的logo-->
+        <e:Image source="logo_png"   horizontalCenter="0"  verticalCenter="-180" ></e:Image>
+        <!--loading进度显示-->
+        <e:Label id='labelLoadingTxt' horizontalCenter="0" verticalCenter="0" height="42" textColor="0x000"></e:Label>
+
+        <e:Image source="loading_progressBg_png" scale9Grid='15,6,28,28' horizontalCenter="0" height="42" width="300" verticalCenter="42"></e:Image>
+        <e:Image source="loading_cover_png" scale9Grid='15,6,30,30' horizontalCenter="0" height="38" width="250" verticalCenter="42" ></e:Image>
+        <e:Image id='imageLoadingProgress' source="loading_progress_png" scale9Grid='15,6,30,30' horizontalCenter="0" width="280" height="38" verticalCenter="42"></e:Image>
+        
+
+    </e:Group>
+
+
+</e:Skin>

@@ -16,8 +16,13 @@ class SoundManager {
     }
     
     private bgSound: egret.Sound;
+<<<<<<< HEAD
     private bgChannel:egret.SoundChannel;
 
+=======
+    private bgChannel:egret.SoundChannel;
+
+>>>>>>> 472310ebceef6f37482b86bc1e079e1ec46c4c07
     private bg_position:number = 0;
     
     public sound_switch:boolean = false;

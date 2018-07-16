@@ -8,6 +8,7 @@ class FilterUtil {
 	}	
 	
     /**灰色滤镜*/
+<<<<<<< HEAD
     public static getGrayFilter(): egret.ColorMatrixFilter[] {
         var colorMatrix = [
             0.3,0.6,0,0,0,
@@ -23,5 +24,22 @@ class FilterUtil {
     public static getBlurFilter(): egret.BlurFilter[] {
         var blurFliter = new egret.BlurFilter(1,1);
         return [blurFliter];
+=======
+    public static getGrayFilter(): egret.ColorMatrixFilter[] {
+        var colorMatrix = [
+            0.3,0.6,0,0,0,
+            0.3,0.6,0,0,0,
+            0.3,0.6,0,0,0,
+            0,0,0,1,0
+        ];
+        var colorFlilter = new egret.ColorMatrixFilter(colorMatrix);
+        return [colorFlilter];
+    }
+    
+    /**模糊滤镜*/
+    public static getBlurFilter(): egret.BlurFilter[] {
+        var blurFliter = new egret.BlurFilter(1,1);
+        return [blurFliter];
+>>>>>>> 472310ebceef6f37482b86bc1e079e1ec46c4c07
     }
 }

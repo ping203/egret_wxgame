@@ -15,11 +15,19 @@ class ViewUtil {
 	
     public static getShape(width: number = 640,height: number = 960,color: number = 0x000000,alpha:number=0.7):egret.Shape
 	{
+<<<<<<< HEAD
         var shp: egret.Shape = new egret.Shape();
         shp.graphics.beginFill(color,alpha);
         shp.graphics.drawRect(0,0,width,height);
         shp.graphics.endFill();
         shp.touchEnabled = false;
+=======
+        var shp: egret.Shape = new egret.Shape();
+        shp.graphics.beginFill(color,alpha);
+        shp.graphics.drawRect(0,0,width,height);
+        shp.graphics.endFill();
+        shp.touchEnabled = false;
+>>>>>>> 472310ebceef6f37482b86bc1e079e1ec46c4c07
         return shp;
 	}
 	

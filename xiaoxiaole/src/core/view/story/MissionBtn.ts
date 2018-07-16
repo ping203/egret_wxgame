@@ -26,7 +26,11 @@ class MissionBtn extends eui.Group{
 	
     private init():void
 	{
+<<<<<<< HEAD
         this.bg_circle = new egret.Bitmap(RES.getRes("btnbg_png"));
+=======
+        this.bg_circle = new egret.Bitmap(RES.getRes("btnbg_png"));
+>>>>>>> 472310ebceef6f37482b86bc1e079e1ec46c4c07
         this.tween_circle = new egret.Bitmap(RES.getRes("btnbg_png"));
         this.lock_bmp = new egret.Bitmap(RES.getRes("mainsuo"));
         

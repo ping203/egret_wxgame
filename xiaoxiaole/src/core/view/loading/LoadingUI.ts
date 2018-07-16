@@ -62,8 +62,12 @@ class LoadingUI extends eui.Component{
         this.progress_txt.text = "资源加载中..." + current + "/" + total;
     }
     
+<<<<<<< HEAD
     public clear():void
     {
+=======
+    public clear():void{
+>>>>>>> 472310ebceef6f37482b86bc1e079e1ec46c4c07
         
     }
 }

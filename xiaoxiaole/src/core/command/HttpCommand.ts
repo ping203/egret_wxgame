@@ -23,6 +23,7 @@ class HttpCommand {
 	
 	public test():void
 	{
+<<<<<<< HEAD
         var request = new egret.HttpRequest();
         request.responseType = egret.HttpResponseType.TEXT;
         var data: string = this.getString("");
@@ -31,6 +32,16 @@ class HttpCommand {
         request.send();
         request.addEventListener(egret.Event.COMPLETE,this.onGetComplete,this);
         request.addEventListener(egret.IOErrorEvent.IO_ERROR,this.onGetIOError,this);
+=======
+        var request = new egret.HttpRequest();
+        request.responseType = egret.HttpResponseType.TEXT;
+        var data: string = this.getString("");
+        request.open("http://api.qq5.com/res/news",egret.HttpMethod.POST);
+        request.setRequestHeader("Content-Type",this.http_head);
+        request.send();
+        request.addEventListener(egret.Event.COMPLETE,this.onGetComplete,this);
+        request.addEventListener(egret.IOErrorEvent.IO_ERROR,this.onGetIOError,this);
+>>>>>>> 472310ebceef6f37482b86bc1e079e1ec46c4c07
         request.addEventListener(egret.ProgressEvent.PROGRESS,this.onGetProgress,this);
 	}
 	
@@ -49,9 +60,15 @@ class HttpCommand {
         console.log("postProgress"+e);
     }
     
+<<<<<<< HEAD
     /**
     * qq5采用json数据
     */
+=======
+    /**
+    * qq5采用json数据
+    */
+>>>>>>> 472310ebceef6f37482b86bc1e079e1ec46c4c07
     public getString(data:string):string
     {
         var data64: string = Base64Util.encode(data);
@@ -60,7 +77,11 @@ class HttpCommand {
             "&time=" + time + 
             "&sign=" + new md5().hex_md5(data64 + time + this.http_url)+
             "&device_type=" + "android" + 
+<<<<<<< HEAD
             "&version=" + "1.2.1";
+=======
+            "&version=" + "1.2.1";
+>>>>>>> 472310ebceef6f37482b86bc1e079e1ec46c4c07
     }
 	
 }

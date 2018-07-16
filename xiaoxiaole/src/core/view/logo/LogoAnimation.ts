@@ -25,7 +25,11 @@ class LogoAnimation extends eui.Component{
 	
 	private onStage(e:egret.Event):void
 	{
+<<<<<<< HEAD
         var tw = egret.Tween.get(this.logo);
+=======
+        var tw = egret.Tween.get(this.logo);
+>>>>>>> 472310ebceef6f37482b86bc1e079e1ec46c4c07
         tw.to({ y: GlobalData.GameStage_height / 2 - 100,scaleX: 1,scaleY: 1 },500,egret.Ease.backInOut).call(this.txtTween,this);
         
         this.once(egret.Event.REMOVED_FROM_STAGE,this.removeStage,this);

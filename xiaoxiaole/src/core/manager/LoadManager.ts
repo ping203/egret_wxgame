@@ -34,14 +34,21 @@ class LoadManager extends egret.EventDispatcher{
         
         RES.createGroup(groupname,keys,override);
         
+<<<<<<< HEAD
         RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onResourceLoadComplete,this);
         RES.addEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR,this.onResourceLoadError,this);
         RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS,this.onResourceProgress,this);
+=======
+        RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onResourceLoadComplete,this);
+        RES.addEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR,this.onResourceLoadError,this);
+        RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS,this.onResourceProgress,this);
+>>>>>>> 472310ebceef6f37482b86bc1e079e1ec46c4c07
         RES.addEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR,this.onItemLoadError,this);
         
         RES.loadGroup(groupname);
     }
     
+<<<<<<< HEAD
     private onResourceLoadComplete(event: RES.ResourceEvent): void {
         if(event.groupName == this.group_name) {
             RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onResourceLoadComplete,this);
@@ -50,12 +57,26 @@ class LoadManager extends egret.EventDispatcher{
             RES.removeEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR,this.onItemLoadError,this);
             
             this.dispatchComplete();
+=======
+    private onResourceLoadComplete(event: RES.ResourceEvent): void {
+        if(event.groupName == this.group_name) {
+            RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onResourceLoadComplete,this);
+            RES.removeEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR,this.onResourceLoadError,this);
+            RES.removeEventListener(RES.ResourceEvent.GROUP_PROGRESS,this.onResourceProgress,this);
+            RES.removeEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR,this.onItemLoadError,this);
+            
+            this.dispatchComplete();
+>>>>>>> 472310ebceef6f37482b86bc1e079e1ec46c4c07
         }
         if(this.loading_view != null && this.loading_view.parent != null)
         {
             this.loading_view.clear();
             this.loading_view.parent.removeChild(this.loading_view);
+<<<<<<< HEAD
         }
+=======
+        }
+>>>>>>> 472310ebceef6f37482b86bc1e079e1ec46c4c07
     }
     
     private dispatchComplete():void
@@ -63,6 +84,7 @@ class LoadManager extends egret.EventDispatcher{
         var event:MyUIEvent = new MyUIEvent(this.event_name);
         event.data = {groupname:this.group_name};
         this.dispatchEvent(event);
+<<<<<<< HEAD
     }
 
     private onItemLoadError(event: RES.ResourceEvent): void {
@@ -78,5 +100,22 @@ class LoadManager extends egret.EventDispatcher{
         if(event.groupName == this.group_name && this.loading_view != null) {
             this.loading_view.setProgress(event.itemsLoaded,event.itemsTotal);
         }
+=======
+    }
+
+    private onItemLoadError(event: RES.ResourceEvent): void {
+        console.warn("Url:" + event.resItem.url + " has failed to load");
+    }
+
+    private onResourceLoadError(event: RES.ResourceEvent): void {
+        console.warn("Group:" + event.groupName + " has failed to load");
+        this.onResourceLoadComplete(event);
+    }
+
+    private onResourceProgress(event: RES.ResourceEvent): void {
+        if(event.groupName == this.group_name && this.loading_view != null) {
+            this.loading_view.setProgress(event.itemsLoaded,event.itemsTotal);
+        }
+>>>>>>> 472310ebceef6f37482b86bc1e079e1ec46c4c07
     }
 }

@@ -548,8 +548,13 @@ class FightLogic extends egret.EventDispatcher {
     /**初始化动画工厂*/
     private initMovieClipDataFactory(): void {
         if(this.mcFactory == null) {
+<<<<<<< HEAD
             var data = RES.getRes("bomb_json");
             var txtr = RES.getRes("bomb_png");
+=======
+            var data = RES.getRes("bomb_json");
+            var txtr = RES.getRes("bomb_png");
+>>>>>>> 472310ebceef6f37482b86bc1e079e1ec46c4c07
             this.mcFactory = new egret.MovieClipDataFactory(data,txtr);
         }
     }
@@ -568,10 +573,17 @@ class FightLogic extends egret.EventDispatcher {
     public getGemArr(): number[] {
         this.gem_arr = this.getRandomGems(30);
 
+<<<<<<< HEAD
         this.gem_arr = [0,0,0,0,0,0,
                         0,0,1,1,1,1,
                         1,1,2,2,2,2,
                         1,1,3,3,3,3,
+=======
+        this.gem_arr = [0,0,0,0,0,0,
+                        0,0,1,1,1,1,
+                        1,1,2,2,2,2,
+                        1,1,3,3,3,3,
+>>>>>>> 472310ebceef6f37482b86bc1e079e1ec46c4c07
                         1,3,4,4,4,4];
         for(var i: number = 0;i < 5;i++) {
             console.log(this.gem_arr[i * 6] + "," + this.gem_arr[i * 6 + 1] + "," + this.gem_arr[i * 6 + 2] + "," +

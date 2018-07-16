@@ -4,8 +4,13 @@
  *
  */
 class MyUIEvent extends egret.Event{
+<<<<<<< HEAD
     public constructor(type: string,bubbles: boolean = false,cancelable: boolean = false) {
         super(type,bubbles,cancelable);
+=======
+    public constructor(type: string,bubbles: boolean = false,cancelable: boolean = false) {
+        super(type,bubbles,cancelable);
+>>>>>>> 472310ebceef6f37482b86bc1e079e1ec46c4c07
     }
 	
     public data:any = null;

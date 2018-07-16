@@ -17,8 +17,13 @@ class BaseButton extends eui.Group{
     {
         this.bg = new egret.Sprite();
         this.addChild(this.bg);
+<<<<<<< HEAD
         var img: egret.Texture = RES.getRes(this.src_str);
         this.src = new egret.Bitmap(img);
+=======
+        var img: egret.Texture = RES.getRes(this.src_str);
+        this.src = new egret.Bitmap(img);
+>>>>>>> 472310ebceef6f37482b86bc1e079e1ec46c4c07
         this.bg.addChild(this.src);
 	}
 	

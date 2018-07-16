@@ -28,8 +28,13 @@ class GemView extends egret.Sprite{
     public changeBomb():void
     {
         this.bg.visible = false;
+<<<<<<< HEAD
         var data = RES.getRes("bomb_json");
         var txtr = RES.getRes("bomb_png");
+=======
+        var data = RES.getRes("bomb_json");
+        var txtr = RES.getRes("bomb_png");
+>>>>>>> 472310ebceef6f37482b86bc1e079e1ec46c4c07
         var mcFactory: egret.MovieClipDataFactory = new egret.MovieClipDataFactory(data,txtr);
         var mc: egret.MovieClip = new egret.MovieClip(mcFactory.generateMovieClipData(this.vo.index%2==0?"bomb1":"bomb2"));
         mc.x = (this.width_set - mc.width)/2;
@@ -37,13 +42,21 @@ class GemView extends egret.Sprite{
         this.addChild(mc);
         mc.play();
         
+<<<<<<< HEAD
         mc.once(egret.Event.COMPLETE,function(e: egret.Event): void {
+=======
+        mc.once(egret.Event.COMPLETE,function(e: egret.Event): void {
+>>>>>>> 472310ebceef6f37482b86bc1e079e1ec46c4c07
             if(mc != null && mc.parent != null)
             {
                 mc.stop();
                 mc.parent.removeChild(mc);
                 mc = null;
+<<<<<<< HEAD
             }
+=======
+            }
+>>>>>>> 472310ebceef6f37482b86bc1e079e1ec46c4c07
         },this);
     }
     

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [
 {"id": 0, "lv": 1, "name": "角色", "exp": 250, "attack": 20, "img": "we_solder0.png"}, 
 {"id": 1, "lv": 2, "name": "角色", "exp": 500, "attack": 21, "img": "we_solder0.png"},
@@ -10,6 +11,20 @@
 {"id": 8, "lv": 9, "name": "角色", "exp": 3150, "attack": 28, "img": "we_solder0.png"}, 
 {"id": 9, "lv": 10, "name": "角色", "exp": 3500, "attack": 29, "img": "we_solder0.png"}, 
 {"id": 10, "lv": 11, "name": "角色", "exp": 4750, "attack": 30, "img": "we_solder1.png"}, 
+=======
+[
+{"id": 0, "lv": 1, "name": "角色", "exp": 250, "attack": 20, "img": "we_solder0.png"}, 
+{"id": 1, "lv": 2, "name": "角色", "exp": 500, "attack": 21, "img": "we_solder0.png"},
+{"id": 2, "lv": 3, "name": "角色", "exp": 750, "attack": 22, "img": "we_solder0.png"}, 
+{"id": 3, "lv": 4, "name": "角色", "exp": 1000, "attack": 23, "img": "we_solder0.png"}, 
+{"id": 4, "lv": 5, "name": "角色", "exp": 1250, "attack": 24, "img": "we_solder0.png"}, 
+{"id": 5, "lv": 6, "name": "角色", "exp": 2100, "attack": 25, "img": "we_solder0.png"}, 
+{"id": 6, "lv": 7, "name": "角色", "exp": 2450, "attack": 26, "img": "we_solder0.png"}, 
+{"id": 7, "lv": 8, "name": "角色", "exp": 2800, "attack": 27, "img": "we_solder0.png"}, 
+{"id": 8, "lv": 9, "name": "角色", "exp": 3150, "attack": 28, "img": "we_solder0.png"}, 
+{"id": 9, "lv": 10, "name": "角色", "exp": 3500, "attack": 29, "img": "we_solder0.png"}, 
+{"id": 10, "lv": 11, "name": "角色", "exp": 4750, "attack": 30, "img": "we_solder1.png"}, 
+>>>>>>> 472310ebceef6f37482b86bc1e079e1ec46c4c07
 {"id": 11, "lv": 12, "name": "角色", "exp": 5200, "attack": 31, "img": "we_solder1.png"},
 {"id": 12, "lv": 13, "name": "角色", "exp": 5650, "attack": 32, "img": "we_solder1.png"},
 {"id": 13, "lv": 14, "name": "角色", "exp": 6100, "attack": 33, "img": "we_solder1.png"},

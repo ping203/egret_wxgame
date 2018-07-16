@@ -25,7 +25,11 @@ class ChapterUI extends eui.Group{
             Math.ceil(StoryLogic.getInstance().current_missionID / StoryLogic.MISSION_LIST_NUM) - 1 : 999;//如果是以前的章节，全部已通关
         this.mission_btn_arr = [];
         
+<<<<<<< HEAD
         var img: egret.Texture = RES.getRes("story_" + this.chapter_id + "_jpg");
+=======
+        var img: egret.Texture = RES.getRes("story_" + this.chapter_id + "_jpg");
+>>>>>>> 472310ebceef6f37482b86bc1e079e1ec46c4c07
         this.addChild(new egret.Bitmap(img));
         for(var i: number = 0;i < this.mission_num;i++) {
             /**状态 0锁定 1开启 2通关*/
