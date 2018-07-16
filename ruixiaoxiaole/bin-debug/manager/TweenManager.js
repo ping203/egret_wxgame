@@ -33,6 +33,7 @@ var TweenManager = (function () {
             ui.anchorOffsetX = stageWidth / 2;
             ui.anchorOffsetY = stageHeight / 2;
             if (extra == 0) {
+                console.log('向右平移');
                 ui.x = -stageWidth / 2;
                 ui.y = stageHeight / 2;
             }

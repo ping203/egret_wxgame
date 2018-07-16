@@ -7,6 +7,7 @@ class Start extends eui.Component{
 
     public constructor(){
         super();
+        this.skinName='LogoAnimationSkin'
         this.once(egret.Event.ADDED_TO_STAGE,this.init,this);
 
     }

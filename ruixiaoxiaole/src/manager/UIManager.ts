@@ -45,7 +45,7 @@ class UIManager extends egret.EventDispatcher{
         if(GlobalData.GameStage!=null){
             console.log('添加主舞台')
             GlobalData.GameStage.addChild(this.mainConn);
-            this.openFirstUI(UIManager.CLASS_UI_INDEX_LOGINMAIN);   
+            this.openFirstUI(UIManager.CLASS_UI_INDEX_LOGOANIMATION,1);   
         }
         
     }
@@ -98,6 +98,7 @@ class UIManager extends egret.EventDispatcher{
         if(this.uiClassArray[index]!=null){
             let ui=new this.uiClassArray[index] as eui.Component;
             if(tweenType==TweenManager.TWEEN_UI_NONE){
+
                 this.OpenFirstUIFinish();
             }else{
                 this.OpenFirstUIFinish.bind(this);

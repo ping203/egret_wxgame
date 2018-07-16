@@ -15,6 +15,7 @@ var Start = (function (_super) {
     __extends(Start, _super);
     function Start() {
         var _this = _super.call(this) || this;
+        _this.skinName = 'LogoAnimationSkin';
         _this.once(egret.Event.ADDED_TO_STAGE, _this.init, _this);
         return _this;
     }

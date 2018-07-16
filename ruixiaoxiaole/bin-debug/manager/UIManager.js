@@ -42,7 +42,7 @@ var UIManager = (function (_super) {
         if (GlobalData.GameStage != null) {
             console.log('添加主舞台');
             GlobalData.GameStage.addChild(this.mainConn);
-            this.openFirstUI(UIManager.CLASS_UI_INDEX_LOGINMAIN);
+            this.openFirstUI(UIManager.CLASS_UI_INDEX_LOGOANIMATION, 1);
         }
     };
     /**
