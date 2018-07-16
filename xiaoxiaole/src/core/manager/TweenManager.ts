@@ -56,6 +56,7 @@ class TweenManager {
                 ui.x = w/2;
                 ui.y = h *3/2;
             }
+            
             if(callback == null) {
                 tw.to({ x: w / 2,y: h/2 },this.tween_ui_time);
             } else {

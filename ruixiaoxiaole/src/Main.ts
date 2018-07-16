@@ -72,7 +72,7 @@ class Main extends eui.UILayer {
 
     private async runGame() {
         await this.loadResource()
-        this.createGameScene();
+        // this.createGameScene();
         const result = await RES.getResAsync("description_json")
         // this.startAnimation(result);
         await platform.login();
@@ -147,7 +147,7 @@ class Main extends eui.UILayer {
     private onResourceLoadProgress(event:RES.ResourceEvent):void{
         if(event.groupName=='game'){
             //在加载游戏资源的时候显示loadingUI
-            console.log('当前加载进度:'+event.itemsLoaded, '总进度:'+event.itemsTotal)
+            // console.log('当前加载进度:'+event.itemsLoaded, '总进度:'+event.itemsTotal)
             this.loadingUI.setCurrNum(event.itemsLoaded);
             this.loadingUI.setTotalNum(event.itemsTotal);
         }    
@@ -179,10 +179,12 @@ class Main extends eui.UILayer {
                 this.removeChild(this.loadingUI)
                 this.loadingUI.clear();
             }
-
-
+            //显示游戏主场景页面
+            UIManager.getInstance().startGame();
+            this.clear()
         }
-    }
+        
+    }   
 
     /**
      * 各种清除
@@ -193,7 +195,9 @@ class Main extends eui.UILayer {
         RES.removeEventListener(RES.ResourceEvent.GROUP_PROGRESS,this.onResourceLoadProgress,this);
         this.loadingUI = null;
         this.preloadUI=null;
+
     }
+
 
     /**
      * 创建场景界面
@@ -202,6 +206,8 @@ class Main extends eui.UILayer {
     protected createGameScene(): void {
       
     }
+
+
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
      * Create a Bitmap object according to name keyword.As for the property of name please refer to the configuration file of resources/resource.json.

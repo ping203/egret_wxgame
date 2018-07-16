@@ -110,10 +110,11 @@ var Main = (function (_super) {
             var result, userInfo;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.loadResource()];
+                    case 0: return [4 /*yield*/, this.loadResource()
+                        // this.createGameScene();
+                    ];
                     case 1:
                         _a.sent();
-                        this.createGameScene();
                         return [4 /*yield*/, RES.getResAsync("description_json")
                             // this.startAnimation(result);
                         ];
@@ -196,7 +197,7 @@ var Main = (function (_super) {
     Main.prototype.onResourceLoadProgress = function (event) {
         if (event.groupName == 'game') {
             //在加载游戏资源的时候显示loadingUI
-            console.log('当前加载进度:' + event.itemsLoaded, '总进度:' + event.itemsTotal);
+            // console.log('当前加载进度:'+event.itemsLoaded, '总进度:'+event.itemsTotal)
             this.loadingUI.setCurrNum(event.itemsLoaded);
             this.loadingUI.setTotalNum(event.itemsTotal);
         }
@@ -220,11 +221,25 @@ var Main = (function (_super) {
             this.addChild(this.loadingUI);
         }
         else if (event.groupName == 'game') {
+            //清除掉加载的界面
             if (this.contains(this.loadingUI)) {
                 this.removeChild(this.loadingUI);
                 this.loadingUI.clear();
             }
+            //显示游戏主场景页面
+            UIManager.getInstance().startGame();
+            this.clear();
         }
+    };
+    /**
+     * 各种清除
+     */
+    Main.prototype.clear = function () {
+        RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResouceLoadComplete, this);
+        RES.removeEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR, this.onResourceLoadError, this);
+        RES.removeEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceLoadProgress, this);
+        this.loadingUI = null;
+        this.preloadUI = null;
     };
     /**
      * 创建场景界面
