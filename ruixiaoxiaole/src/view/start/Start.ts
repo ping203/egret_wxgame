@@ -41,14 +41,14 @@ class Start extends eui.Component{
 
     private clear():void{
         //打开主界面
-        UIManager.getInstance().openFirstUI(UIManager.CLASS_UI_INDEX_LOGINMAIN);
+        UIManager.getInstance().openFirstUI(UIManager.CLASS_UI_INDEX_LOGINMAIN,TweenManager.TWEEN_UI_MOVE);
     }
 
     /**
      * 移除舞台
      */
     private removeStage():void{
-        console.log('start移除舞台')
+        console.log('start已被移除舞台')
     }
     
 }

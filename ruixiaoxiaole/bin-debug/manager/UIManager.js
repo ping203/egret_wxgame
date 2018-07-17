@@ -62,6 +62,7 @@ var UIManager = (function (_super) {
      * @param 动画类型
      */
     UIManager.prototype.openFirstUI = function (index, tweenType) {
+        var _this = this;
         if (tweenType === void 0) { tweenType = 0; }
         if (this.isUiTweeing) {
             console.log("正在执行动画");
@@ -75,13 +76,17 @@ var UIManager = (function (_super) {
         if (this.tweenType == TweenManager.TWEEN_UI_RANDOM) {
             this.tweenType = Math.floor(Math.random() * 3 + 1);
         }
-        console.log("缓动动画类型");
         //如果第一次添加,没有其他界面.直接加上UI
         if (this.mainConn.numChildren == 0) {
             this.realOpenFirst(index, tweenType);
         }
         else {
-            console.log("哈哈哈哈");
+            var lastUI = this.mainConn.getChildAt(0);
+            //执行当前界面的退出动画
+            TweenManager.getInstance().uiDisAppearTween(lastUI, tweenType, 2, function () {
+                _this.mainConn.removeChildAt(0);
+                _this.realOpenFirst(index, tweenType);
+            }, this);
         }
     };
     /**

@@ -88,7 +88,14 @@ class UIManager extends egret.EventDispatcher{
         if(this.mainConn.numChildren==0){
             this.realOpenFirst(index,tweenType);
         }else{
-            console.log("哈哈哈哈")
+            let lastUI=this.mainConn.getChildAt(0);
+            //执行当前界面的退出动画
+            TweenManager.getInstance().uiDisAppearTween(lastUI,tweenType,2,()=>{
+                this.mainConn.removeChildAt(0);
+                this.realOpenFirst(index,tweenType);
+            },this);
+            
+
         }
     }   
     

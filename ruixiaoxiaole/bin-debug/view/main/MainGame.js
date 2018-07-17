@@ -17,12 +17,37 @@ var MainGame = (function (_super) {
         var _this = _super.call(this) || this;
         _this.skinName = 'MainGameSkin';
         _this.once(egret.Event.ADDED_TO_STAGE, _this.init, _this);
+        _this.once(egret.Event.REMOVED_FROM_STAGE, _this.removeMainStage, _this);
         return _this;
     }
     /**
      * 初始化
      */
     MainGame.prototype.init = function () {
+        this.btnStartGame = new egret.Bitmap();
+        this.btnStartGame.texture = RES.getRes("startgame_png");
+        this.addChild(this.btnStartGame);
+        this.btnStartGame.x = GlobalData.GameStageWidth - this.btnStartGame.width - 50;
+        this.btnStartGame.y = GlobalData.GameStageHeight - this.btnStartGame.height - 50;
+        console.log('开始');
+        // this.btnStartGame.anchorOffsetX= GlobalData.GameStageWidth- this.btnStartGame.width/2+50
+        // this.btnStartGame.anchorOffsetY=GlobalData.GameStageHeight- this.btnStartGame.height/2+50
+        // console.log('x:',this.btnStartGame.anchorOffsetX)
+        // console.log('y:',this.btnStartGame.anchorOffsetY)
+        console.log('fuck1', this.btnStartGame.anchorOffsetX);
+        console.log('fuck2', this.btnStartGame.anchorOffsetY);
+        var tw = egret.Tween.get(this.btnStartGame, { loop: true });
+        var oldY = this.btnStartGame.y;
+        console.log('fuck3:', oldY);
+        tw.to({ y: this.btnStartGame.y + 20 }, 500).to({ y: oldY }, 500).wait(100).call(function () {
+            console.log('日了狗');
+        }, this);
+    };
+    /**
+     * 移除舞台的监听
+     */
+    MainGame.prototype.removeMainStage = function () {
+        console.log('移除了主界面');
     };
     return MainGame;
 }(eui.Component));

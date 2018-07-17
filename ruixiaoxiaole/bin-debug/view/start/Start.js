@@ -44,13 +44,13 @@ var Start = (function (_super) {
     };
     Start.prototype.clear = function () {
         //打开主界面
-        UIManager.getInstance().openFirstUI(UIManager.CLASS_UI_INDEX_LOGINMAIN);
+        UIManager.getInstance().openFirstUI(UIManager.CLASS_UI_INDEX_LOGINMAIN, TweenManager.TWEEN_UI_MOVE);
     };
     /**
      * 移除舞台
      */
     Start.prototype.removeStage = function () {
-        console.log('start移除舞台');
+        console.log('start已被移除舞台');
     };
     return Start;
 }(eui.Component));

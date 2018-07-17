@@ -13,13 +13,13 @@
 		"libs/modules/promise/promise.js"
 	],
 	"game": [
-		"bin-debug/Main.js",
 		"bin-debug/manager/TweenManager.js",
+		"bin-debug/AssetAdapter.js",
 		"bin-debug/Platform.js",
 		"bin-debug/ThemeAdapter.js",
 		"bin-debug/data/GlobalData.js",
 		"bin-debug/manager/DataManager.js",
-		"bin-debug/AssetAdapter.js",
+		"bin-debug/Main.js",
 		"bin-debug/manager/UIManager.js",
 		"bin-debug/utils/ViewUtils.js",
 		"bin-debug/view/loading/LoadingUI.js",

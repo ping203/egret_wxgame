@@ -60,7 +60,7 @@ class TweenManager {
             }else if(extra==1){ //向下平移
 
             }else if(extra==2){ //向左平移
-
+                
             }else{  //向上平移
                 
             }
@@ -74,5 +74,32 @@ class TweenManager {
             
 
         }
+    }
+
+    /**
+     * ui退出动画
+     */
+    public uiDisAppearTween(ui:egret.DisplayObject,type:number,extra:number,callback:Function,thisObj:any):void{
+        let tw=egret.Tween.get(ui);
+        let stageHeight=GlobalData.GameStageHeight;
+        let stageWidth=GlobalData.GameStageWidth;
+        let xx:number=0;
+        let yy:number=0;
+        //移除前，重置坐标和锚点
+        if(type==TweenManager.TWEEN_UI_MOVE){   //平移动画
+            ui.anchorOffsetX=stageWidth/2;
+            ui.anchorOffsetY=stageHeight/2;
+            ui.x=stageWidth/2;
+            ui.y=stageHeight/2;
+            if(extra==0){   //向右平移
+
+            }else if(extra==2){ //向左平移
+                xx=-stageWidth/2;
+                yy=stageHeight/2;
+
+            }
+            callback==null?tw.to({x:xx,y:yy},this.tweenUITime):tw.to({x:xx,y:yy},this.tweenUITime).call(callback,this)
+        }
+
     }
 }

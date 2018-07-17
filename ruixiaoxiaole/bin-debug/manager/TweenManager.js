@@ -54,6 +54,30 @@ var TweenManager = (function () {
         else if (type == TweenManager.TWEEN_UI_MOVE) {
         }
     };
+    /**
+     * ui退出动画
+     */
+    TweenManager.prototype.uiDisAppearTween = function (ui, type, extra, callback, thisObj) {
+        var tw = egret.Tween.get(ui);
+        var stageHeight = GlobalData.GameStageHeight;
+        var stageWidth = GlobalData.GameStageWidth;
+        var xx = 0;
+        var yy = 0;
+        //移除前，重置坐标和锚点
+        if (type == TweenManager.TWEEN_UI_MOVE) {
+            ui.anchorOffsetX = stageWidth / 2;
+            ui.anchorOffsetY = stageHeight / 2;
+            ui.x = stageWidth / 2;
+            ui.y = stageHeight / 2;
+            if (extra == 0) {
+            }
+            else if (extra == 2) {
+                xx = -stageWidth / 2;
+                yy = stageHeight / 2;
+            }
+            callback == null ? tw.to({ x: xx, y: yy }, this.tweenUITime) : tw.to({ x: xx, y: yy }, this.tweenUITime).call(callback, this);
+        }
+    };
     //随机选取一种动画效果
     TweenManager.TWEEN_UI_RANDOM = -1;
     //无动画类型
