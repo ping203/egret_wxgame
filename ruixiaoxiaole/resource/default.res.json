@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "description_json,gameEui_json,logo_png,startGameBtn_png,loadBg_jpg,winimg_png,story1bg_jpg,story2bg_jpg,story3bg_jpg,shop_btn_png,btnbg_png,caidan_png,goback_btn_png,story_4_jpg,wallbv_png,reglogbg_png,munebg_png,npcimg_png,bbg_png,bdbtn_png,buybtn_png,cancel_btn_png,combo_png,defblood_png,defbloodbg_png,di_png,djinfobg_png,djtit_png,exp_png,expbar_png,expbg_png,fanhui_png,fightbg0_jpg,fightbg1_jpg,fightbg2_jpg,fightbgb_jpg,fing_Arrow_png,finger_png,forgetpsd_png,getbtn_png,getsuc_png,giveupbtn_png,goback_png,goback_arrow_png,gobackbtn_png,gold_png,goout_png,guan_png,infobg_png,inputbg_png,jbbg_png,jyjlbg_png,lb_bg_png,lb_tit_png,lb_txt_png,loadbg_jpg,loading_png,logbtn_png,logtit_png,losimg_png,lostit_png,menubtn_png,menubtnbg_png,munebg2_png,npcimg2_png,offlogbtn_png,ok_btn_png,other_jpg,pause_png,paustit_png,paywanba_png,playinfobg_png,playlv_png,propts_png,qued_btn_png,quicklog_png,regbtn_png,regbtn~1_png,reglogbg2_png,regtit_png,reward_png,rush_btn_png,setbg_png,share_png,shop_btn2_png,star_a_png,star_b_png,start_btn_png,startgame_png,startnew_png,sucbg_png,tab_dazhe_png,updatebtn_png,wallbv2_png,wallbvbg_png,walltit_png,wallts_png,wintit_png,xzts_jpg,ydbox_png",
+			"keys": "description_json,gameEui_json,logo_png,startGameBtn_png,loadBg_jpg,winimg_png,story1bg_jpg,story2bg_jpg,story3bg_jpg,shop_btn_png,btnbg_png,caidan_png,goback_btn_png,wallbv_png,reglogbg_png,munebg_png,npcimg_png,bbg_png,bdbtn_png,buybtn_png,cancel_btn_png,combo_png,defblood_png,defbloodbg_png,di_png,djinfobg_png,djtit_png,exp_png,expbar_png,expbg_png,fanhui_png,fightbg0_jpg,fightbg1_jpg,fightbg2_jpg,fightbgb_jpg,fing_Arrow_png,finger_png,forgetpsd_png,getbtn_png,getsuc_png,giveupbtn_png,goback_png,goback_arrow_png,gobackbtn_png,gold_png,goout_png,guan_png,infobg_png,inputbg_png,jbbg_png,jyjlbg_png,lb_bg_png,lb_tit_png,lb_txt_png,loadbg_jpg,loading_png,logbtn_png,logtit_png,losimg_png,lostit_png,menubtn_png,menubtnbg_png,munebg2_png,npcimg2_png,offlogbtn_png,ok_btn_png,other_jpg,pause_png,paustit_png,paywanba_png,playinfobg_png,playlv_png,propts_png,qued_btn_png,quicklog_png,regbtn_png,regbtn~1_png,reglogbg2_png,regtit_png,reward_png,rush_btn_png,setbg_png,share_png,shop_btn2_png,star_a_png,star_b_png,start_btn_png,startgame_png,startnew_png,sucbg_png,tab_dazhe_png,updatebtn_png,wallbv2_png,wallbvbg_png,walltit_png,wallts_png,wintit_png,xzts_jpg,ydbox_png,story4bg_jpg",
 			"name": "preload"
 		},
 		{
@@ -98,11 +98,6 @@
 			"url": "assets/game/main/goback_btn.png",
 			"type": "image",
 			"name": "goback_btn_png"
-		},
-		{
-			"url": "assets/game/main/story_4.jpg",
-			"type": "image",
-			"name": "story_4_jpg"
 		},
 		{
 			"url": "assets/game/menu/wallbv.png",
@@ -533,6 +528,11 @@
 			"url": "assets/game/other/ydbox.png",
 			"type": "image",
 			"name": "ydbox_png"
+		},
+		{
+			"name": "story4bg_jpg",
+			"type": "image",
+			"url": "assets/game/main/story4bg.jpg"
 		}
 	]
 }

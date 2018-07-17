@@ -45,7 +45,7 @@ class UIManager extends egret.EventDispatcher{
         if(GlobalData.GameStage!=null){
             console.log('添加主舞台')
             GlobalData.GameStage.addChild(this.mainConn);
-            this.openFirstUI(UIManager.CLASS_UI_INDEX_LOGOANIMATION,1);   
+            this.openFirstUI(UIManager.CLASS_UI_INDEX_LOGOANIMATION,0);   
         }
         
     }
@@ -54,8 +54,8 @@ class UIManager extends egret.EventDispatcher{
      * 初始化ui
      */
     private initUIClass():void{
-        this.uiClassArray=[Start];
-
+        this.uiClassArray=[Start,MainGame];
+        
     }
 
     /**
@@ -70,7 +70,7 @@ class UIManager extends egret.EventDispatcher{
      * @param 索引
      * @param 动画类型
      */
-    private openFirstUI(index:number,tweenType:number=0):void{
+    public openFirstUI(index:number,tweenType:number=0):void{
         if(this.isUiTweeing){
             console.log("正在执行动画")
             return;
@@ -84,10 +84,11 @@ class UIManager extends egret.EventDispatcher{
         if(this.tweenType==TweenManager.TWEEN_UI_RANDOM){
             this.tweenType=Math.floor(Math.random()*3+1);
         }
-        console.log("缓动动画类型");
         //如果第一次添加,没有其他界面.直接加上UI
         if(this.mainConn.numChildren==0){
             this.realOpenFirst(index,tweenType);
+        }else{
+            console.log("哈哈哈哈")
         }
     }   
     
@@ -96,9 +97,8 @@ class UIManager extends egret.EventDispatcher{
      */
     private realOpenFirst(index:number,tweenType:number,extra:number=0){
         if(this.uiClassArray[index]!=null){
-            let ui=new this.uiClassArray[index] as eui.Component;
+            let ui=new this.uiClassArray[index]() as eui.Component;
             if(tweenType==TweenManager.TWEEN_UI_NONE){
-
                 this.OpenFirstUIFinish();
             }else{
                 this.OpenFirstUIFinish.bind(this);
@@ -107,7 +107,7 @@ class UIManager extends egret.EventDispatcher{
             this.mainConn.addChild(ui)
         }else{
             console.log("ui索引错误")
-
+            
         }
         
     }

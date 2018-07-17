@@ -102,8 +102,8 @@ var Main = (function (_super) {
      */
     Main.prototype.init = function () {
         GlobalData.GameStage = this.stage;
-        GlobalData.GameStageWidth = this.stage.width; //egret.MainContext.instance.stage.stageWidth;
-        GlobalData.GameStageHeight = this.stage.height; //egret.MainContext.instance.stage.stageHeight;
+        GlobalData.GameStageWidth = this.stage.stageWidth; //egret.MainContext.instance.stage.stageWidth;
+        GlobalData.GameStageHeight = this.stage.stageHeight; //egret.MainContext.instance.stage.stageHeight;
     };
     Main.prototype.runGame = function () {
         return __awaiter(this, void 0, void 0, function () {

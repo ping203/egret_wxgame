@@ -42,14 +42,14 @@ var UIManager = (function (_super) {
         if (GlobalData.GameStage != null) {
             console.log('添加主舞台');
             GlobalData.GameStage.addChild(this.mainConn);
-            this.openFirstUI(UIManager.CLASS_UI_INDEX_LOGOANIMATION, 1);
+            this.openFirstUI(UIManager.CLASS_UI_INDEX_LOGOANIMATION, 0);
         }
     };
     /**
      * 初始化ui
      */
     UIManager.prototype.initUIClass = function () {
-        this.uiClassArray = [Start];
+        this.uiClassArray = [Start, MainGame];
     };
     /**
      * 初始化json数据
@@ -80,6 +80,9 @@ var UIManager = (function (_super) {
         if (this.mainConn.numChildren == 0) {
             this.realOpenFirst(index, tweenType);
         }
+        else {
+            console.log("哈哈哈哈");
+        }
     };
     /**
      * really？
@@ -87,7 +90,7 @@ var UIManager = (function (_super) {
     UIManager.prototype.realOpenFirst = function (index, tweenType, extra) {
         if (extra === void 0) { extra = 0; }
         if (this.uiClassArray[index] != null) {
-            var ui = new this.uiClassArray[index];
+            var ui = new this.uiClassArray[index]();
             if (tweenType == TweenManager.TWEEN_UI_NONE) {
                 this.OpenFirstUIFinish();
             }

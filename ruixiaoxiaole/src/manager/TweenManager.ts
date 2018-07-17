@@ -46,15 +46,17 @@ class TweenManager {
         let stageHeight=GlobalData.GameStageHeight;
         let xx:number=0;    //目标x
         let yy:number=0;    //目标y
+        console.log("stageWidth:",stageWidth);
+        console.log("stageHeight:",stageHeight);
         //根据类型初始化状态
         if(type==TweenManager.TWEEN_UI_MOVE){   //移动的缓动动画
             //设置ui的锚点为舞台的中心点
             ui.anchorOffsetX=stageWidth/2;
             ui.anchorOffsetY=stageHeight/2;
             if(extra==0){   //向右平移
-                console.log('向右平移')
                 ui.x=-stageWidth/2;
                 ui.y=stageHeight/2;
+                
             }else if(extra==1){ //向下平移
 
             }else if(extra==2){ //向左平移
@@ -62,20 +64,15 @@ class TweenManager {
             }else{  //向上平移
                 
             }
-
             if(callback!=null){
                 tw.to({x:stageWidth/2,y:stageHeight/2},this.tweenUITime)
             }else{
                 tw.to({x:stageWidth /2,y:stageHeight/2},this.tweenUITime).call(callback,thisObj);
-            }
-            
-            
+            }  
+
         }else if(type==TweenManager.TWEEN_UI_MOVE){ //缩放的缓动动画
             
 
         }
-
     }
-
-
 }

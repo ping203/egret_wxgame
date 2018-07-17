@@ -65,8 +65,8 @@ class Main extends eui.UILayer {
      */
     private init():void{
         GlobalData.GameStage=this.stage;
-        GlobalData.GameStageWidth=this.stage.width; //egret.MainContext.instance.stage.stageWidth;
-        GlobalData.GameStageHeight=this.stage.height; //egret.MainContext.instance.stage.stageHeight;
+        GlobalData.GameStageWidth=this.stage.stageWidth; //egret.MainContext.instance.stage.stageWidth;
+        GlobalData.GameStageHeight=this.stage.stageHeight; //egret.MainContext.instance.stage.stageHeight;
 
     }
 

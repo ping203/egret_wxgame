@@ -27,13 +27,14 @@ var TweenManager = (function () {
         var stageHeight = GlobalData.GameStageHeight;
         var xx = 0; //目标x
         var yy = 0; //目标y
+        console.log("stageWidth:", stageWidth);
+        console.log("stageHeight:", stageHeight);
         //根据类型初始化状态
         if (type == TweenManager.TWEEN_UI_MOVE) {
             //设置ui的锚点为舞台的中心点
             ui.anchorOffsetX = stageWidth / 2;
             ui.anchorOffsetY = stageHeight / 2;
             if (extra == 0) {
-                console.log('向右平移');
                 ui.x = -stageWidth / 2;
                 ui.y = stageHeight / 2;
             }

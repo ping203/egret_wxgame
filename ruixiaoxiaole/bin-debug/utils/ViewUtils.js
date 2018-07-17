@@ -11,6 +11,18 @@ var ViewUtils = (function () {
         view.x = (GlobalData.GameStage.stageWidth - view.width) / 2;
         view.y = (GlobalData.GameStage.stageHeight - view.height) / 2;
     };
+    ViewUtils.getShape = function (width, height, color, alpha) {
+        if (width === void 0) { width = 640; }
+        if (height === void 0) { height = 960; }
+        if (color === void 0) { color = 0x000000; }
+        if (alpha === void 0) { alpha = 0.7; }
+        var shp = new egret.Shape();
+        shp.graphics.beginFill(color, alpha);
+        shp.graphics.drawRect(0, 0, width, height);
+        shp.graphics.endFill();
+        shp.touchEnabled = false;
+        return shp;
+    };
     return ViewUtils;
 }());
 __reflect(ViewUtils.prototype, "ViewUtils");
