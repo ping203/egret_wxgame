@@ -29,18 +29,9 @@ var MainGame = (function (_super) {
         this.addChild(this.btnStartGame);
         this.btnStartGame.x = GlobalData.GameStageWidth - this.btnStartGame.width - 50;
         this.btnStartGame.y = GlobalData.GameStageHeight - this.btnStartGame.height - 50;
-        console.log('开始');
-        // this.btnStartGame.anchorOffsetX= GlobalData.GameStageWidth- this.btnStartGame.width/2+50
-        // this.btnStartGame.anchorOffsetY=GlobalData.GameStageHeight- this.btnStartGame.height/2+50
-        // console.log('x:',this.btnStartGame.anchorOffsetX)
-        // console.log('y:',this.btnStartGame.anchorOffsetY)
-        console.log('fuck1', this.btnStartGame.anchorOffsetX);
-        console.log('fuck2', this.btnStartGame.anchorOffsetY);
         var tw = egret.Tween.get(this.btnStartGame, { loop: true });
         var oldY = this.btnStartGame.y;
-        console.log('fuck3:', oldY);
         tw.to({ y: this.btnStartGame.y + 20 }, 500).to({ y: oldY }, 500).wait(100).call(function () {
-            console.log('日了狗');
         }, this);
     };
     /**

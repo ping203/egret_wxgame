@@ -28,10 +28,7 @@
 		"resource/eui_skins/TextInputSkin.exml",
 		"resource/eui_skins/ToggleSwitchSkin.exml",
 		"resource/eui_skins/VScrollBarSkin.exml",
-		"resource/eui_skins/VSliderSkin.exml",
-		"resource/assets/skins/loadingUISkin.exml",
-		"resource/assets/skins/LogoAnimationSkin.exml",
-		"resource/assets/skins/MainGameSkin.exml"
+		"resource/eui_skins/VSliderSkin.exml"
 	],
 	"path": "resource/default.thm.json"
 }

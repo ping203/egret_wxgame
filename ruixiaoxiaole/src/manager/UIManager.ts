@@ -19,7 +19,7 @@ class UIManager extends egret.EventDispatcher{
     public static CLASS_UI_INDEX_LOGINMAIN:     number = 1;
     public static CLASS_UI_INDEX_STORY:         number = 2;
     public static CLASS_UI_INDEX_FIGHT:         number = 3;
-
+    
     public constructor() {
     	super();
 	}
