@@ -27,7 +27,7 @@ class MainGame extends eui.Component{
         let oldY=this.btnStartGame.y;
 
         tw.to({y:this.btnStartGame.y+20},500).to({y:oldY},500).wait(100).call(()=>{
-
+            
         },this);
         
     }

@@ -13,8 +13,12 @@ class UIManager extends egret.EventDispatcher{
     private isUiTweeing:boolean=false;
     //动画的类型
     private tweenType:number=1;
+    //主容器
+    private mainConn:egret.DisplayObjectContainer;
 
 
+    public static CLASS_UI_INDEX_MAIN:     number = 0;
+    
     public constructor(){
         super()
     }
@@ -27,10 +31,29 @@ class UIManager extends egret.EventDispatcher{
     }
 
     /**
+     * 开始游戏
+     */
+    public  startGame():void{
+        this.mainConn=new egret.DisplayObjectContainer();
+        if(GlobalData.GameStage!=null){
+            //将游戏主界面添加进主容器中
+            GlobalData.GameStage.addChild(this.mainConn);
+            this.openFirstUI(UIManager.CLASS_UI_INDEX_MAIN);
+        }
+
+    }
+
+    /**
+     * 打开第一个界面
+     */
+    private openFirstUI(index:number,tweenType:number=0):void{
+        // TODO
+    }
+    /**
      * 初始化所有需要展示的ui
      */
     private initUiClass(){
-        this.uiClassArray=[Start];
+        this.uiClassArray=[Start,MainGame];
     }
 
 
