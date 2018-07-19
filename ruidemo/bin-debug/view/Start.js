@@ -33,7 +33,8 @@ var Start = (function (_super) {
         //开始播放动画
         var tw = egret.Tween.get(this.bgBitmap);
         tw.to({ scaleX: 1, scaleY: 1 }, 300, egret.Ease.backOut).call(function () {
-            console.log('sdasdas');
+            //跳转到游戏首页
+            UIManager.getInstance.startGame();
         }, this);
     };
     return Start;

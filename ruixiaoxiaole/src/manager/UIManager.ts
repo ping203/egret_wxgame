@@ -84,6 +84,7 @@ class UIManager extends egret.EventDispatcher{
         if(this.tweenType==TweenManager.TWEEN_UI_RANDOM){
             this.tweenType=Math.floor(Math.random()*3+1);
         }
+        
         //如果第一次添加,没有其他界面.直接加上UI
         if(this.mainConn.numChildren==0){
             this.realOpenFirst(index,tweenType);

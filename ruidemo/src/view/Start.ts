@@ -30,7 +30,8 @@ class Start extends egret.DisplayObjectContainer{
         let tw=egret.Tween.get(this.bgBitmap);
         tw.to({scaleX:1,scaleY:1},300,egret.Ease.backOut).call(()=>{
             //跳转到游戏首页
-            
+            UIManager.getInstance().startGame();
+
         },this);
         
     }
